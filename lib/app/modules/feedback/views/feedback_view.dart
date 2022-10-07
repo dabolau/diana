@@ -39,9 +39,15 @@ class FeedbackView extends GetView<FeedbackController> {
             key: formKey,
             child: Column(
               children: [
+                //////
+                // 间隔
+                //////
                 SizedBox(
                   height: 10,
                 ),
+                //////
+                // 描述输入框
+                //////
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   color: Colors.white,
@@ -64,9 +70,15 @@ class FeedbackView extends GetView<FeedbackController> {
                     },
                   ),
                 ),
+                //////
+                // 间隔
+                //////
                 SizedBox(
                   height: 10,
                 ),
+                //////
+                // 邮箱输入框
+                //////
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   color: Colors.white,
@@ -89,6 +101,9 @@ class FeedbackView extends GetView<FeedbackController> {
                     },
                   ),
                 ),
+                //////
+                // 间隔
+                //////
                 SizedBox(
                   height: 10,
                 ),
@@ -99,6 +114,9 @@ class FeedbackView extends GetView<FeedbackController> {
                     return Text('${controller.description}');
                   },
                 ),
+                //////
+                // 提交按钮
+                //////
                 Container(
                   width: double.infinity,
                   height: 44,
@@ -127,8 +145,19 @@ class FeedbackView extends GetView<FeedbackController> {
                       ),
                     ),
                     style: ButtonStyle(
+                      // 按钮形状
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                      // 背景颜色
                       backgroundColor: MaterialStateProperty.all(
-                        Colors.yellow,
+                        Color(0xFFFFEB3B),
+                      ),
+                      // 覆盖颜色
+                      overlayColor: MaterialStateProperty.all(
+                        Color(0xFFFFEB3B),
                       ),
                     ),
                   ),
