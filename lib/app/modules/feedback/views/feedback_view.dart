@@ -133,7 +133,7 @@ class FeedbackView extends GetView<FeedbackController> {
                         controller.email.value = email;
                         // 提交数据到服务器
                         controller.postFeedback();
-                        // 更新控制器
+                        // 更新界面
                         controller.update();
                       }
                     },

@@ -271,7 +271,12 @@ class MyView extends GetView<MyController> {
               height: 50,
               // color: Color(0xFFFFEB3B),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  // 获取版本信息
+                  controller.getAllVersion();
+                  // 更新界面
+                  controller.update();
+                },
                 child: Row(
                   // 主轴间隔显示
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -333,7 +338,6 @@ class MyView extends GetView<MyController> {
                     Text(
                       '意见反馈',
                       style: TextStyle(
-                    
                         fontSize: 14,
                       ),
                     ),
@@ -342,7 +346,6 @@ class MyView extends GetView<MyController> {
                     // 右边组件
                     Icon(
                       Icons.keyboard_arrow_right,
-              
                       size: 20,
                     ),
                   ],

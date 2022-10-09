@@ -19,7 +19,7 @@ class FeedbackProvider extends GetConnect {
     // 发送请求
     final response = await get(
         'http://localhost:8081/feedback/detail/?id=633d7878519e180f23751a28');
-    // 响应数据转换为模型
+    // 网络数据转换为模型
     Feedback feedback = Feedback.fromJson(response.body);
     return feedback;
   }
@@ -30,7 +30,7 @@ class FeedbackProvider extends GetConnect {
     final response =
         await post('http://localhost:8081/feedback/add', feedbackBody);
     print(response.body);
-    // 响应数据转换为模型
+    // 网络数据转换为模型
     Feedback feedback = Feedback.fromJson(response.body);
     return feedback;
   }
