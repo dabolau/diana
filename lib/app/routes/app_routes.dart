@@ -7,6 +7,7 @@ abstract class Routes {
   static const MY = _Paths.MY;
   static const SEARCH = _Paths.SEARCH;
   static const FEEDBACK = _Paths.FEEDBACK;
+  static const AD = _Paths.AD;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const MY = '/my';
   static const SEARCH = '/search';
   static const FEEDBACK = '/feedback';
+  static const AD = '/ad';
 }

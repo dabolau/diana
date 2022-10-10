@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/ad/bindings/ad_binding.dart';
+import '../modules/ad/views/ad_view.dart';
 import '../modules/feedback/bindings/feedback_binding.dart';
 import '../modules/feedback/views/feedback_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.FEEDBACK,
       page: () => FeedbackView(),
       binding: FeedbackBinding(),
+    ),
+    GetPage(
+      name: _Paths.AD,
+      page: () => AdView(),
+      binding: AdBinding(),
     ),
   ];
 }

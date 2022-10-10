@@ -19,21 +19,21 @@ class FeedbackView extends GetView<FeedbackController> {
           centerTitle: true,
           elevation: 0,
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () async {
-            // 默认主题切换
-            // Get.changeTheme(
-            //     Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
-            // 自定义主图切换
-            Get.changeTheme(Get.isDarkMode ? Themes.light : Themes.dark);
-            // 获取数据
-            // controller.getFeedback();
-            // 添加数据
-            // controller.postFeedback();
-          },
-          elevation: 0,
-          child: Icon(Icons.add),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () async {
+        //     // 默认主题切换
+        //     // Get.changeTheme(
+        //     //     Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+        //     // 自定义主图切换
+        //     Get.changeTheme(Get.isDarkMode ? Themes.light : Themes.dark);
+        //     // 获取数据
+        //     // controller.getFeedback();
+        //     // 添加数据
+        //     // controller.postFeedback();
+        //   },
+        //   elevation: 0,
+        //   child: Icon(Icons.add),
+        // ),
         body: Container(
           child: Form(
             key: formKey,
@@ -56,9 +56,13 @@ class FeedbackView extends GetView<FeedbackController> {
                     maxLength: 200,
                     // 表单文本框初始值
                     initialValue: "1234567890",
+
                     decoration: InputDecoration(
                       hintText: '请输入您的意见或建议',
                       border: InputBorder.none,
+                    ),
+                    style: TextStyle(
+                      color: textPrimaryColor,
                     ),
                     // 验证数据
                     validator: (value) {
@@ -88,6 +92,9 @@ class FeedbackView extends GetView<FeedbackController> {
                     decoration: InputDecoration(
                       hintText: '请输入您的邮箱，我们会联系您',
                       border: InputBorder.none,
+                    ),
+                    style: TextStyle(
+                      color: textPrimaryColor,
                     ),
                     // 验证数据
                     validator: (value) {
@@ -140,8 +147,10 @@ class FeedbackView extends GetView<FeedbackController> {
                     child: Text(
                       '提交',
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
+                        color: Get.isDarkMode
+                            ? textPrimaryColor
+                            : textPrimaryColor,
+                        // fontSize: 12,
                       ),
                     ),
                     style: ButtonStyle(
@@ -153,11 +162,11 @@ class FeedbackView extends GetView<FeedbackController> {
                       ),
                       // 背景颜色
                       backgroundColor: MaterialStateProperty.all(
-                        Color(0xFFFFEB3B),
+                        Get.isDarkMode ? primaryColor : primaryColor,
                       ),
                       // 覆盖颜色
                       overlayColor: MaterialStateProperty.all(
-                        Color(0xFFFFEB3B),
+                        Get.isDarkMode ? primaryColor : primaryColor,
                       ),
                     ),
                   ),

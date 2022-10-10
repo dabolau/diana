@@ -14,17 +14,17 @@ class MyView extends GetView<MyController> {
         centerTitle: true,
         elevation: 0,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // 默认主题切换
-          // Get.changeTheme(
-          //     Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
-          // 自定义主图切换
-          Get.changeTheme(Get.isDarkMode ? Themes.light : Themes.dark);
-        },
-        elevation: 0,
-        child: Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     // 默认主题切换
+      //     // Get.changeTheme(
+      //     //     Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+      //     // 自定义主图切换
+      //     Get.changeTheme(Get.isDarkMode ? Themes.light : Themes.dark);
+      //   },
+      //   elevation: 0,
+      //   child: Icon(Icons.add),
+      // ),
       body: Container(
         child: ListView(
           children: [
@@ -52,17 +52,12 @@ class MyView extends GetView<MyController> {
                     // 左边组件
                     Text(
                       '账号信息',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
                     ),
                     // 中间组件
                     Spacer(),
                     // 右边组件
                     Icon(
                       Icons.keyboard_arrow_right,
-                      color: Colors.black,
                       size: 20,
                     ),
                   ],
@@ -94,17 +89,12 @@ class MyView extends GetView<MyController> {
                     // 左边组件
                     Text(
                       '安全隐私',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
                     ),
                     // 中间组件
                     Spacer(),
                     // 右边组件
                     Icon(
                       Icons.keyboard_arrow_right,
-                      color: Colors.black,
                       size: 20,
                     ),
                   ],
@@ -137,10 +127,6 @@ class MyView extends GetView<MyController> {
                     // 左边组件
                     Text(
                       '多国语言',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
                     ),
                     // 中间组件
                     // Container(),
@@ -149,13 +135,11 @@ class MyView extends GetView<MyController> {
                     Text(
                       '简体中文',
                       style: TextStyle(
-                        color: Colors.black,
                         fontSize: 12,
                       ),
                     ),
                     Icon(
                       Icons.keyboard_arrow_right,
-                      color: Colors.black,
                       size: 20,
                     ),
                   ],
@@ -191,10 +175,6 @@ class MyView extends GetView<MyController> {
                     // 左边组件
                     Text(
                       '主题样式',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
                     ),
                     // 中间组件
                     Spacer(),
@@ -202,13 +182,11 @@ class MyView extends GetView<MyController> {
                     Text(
                       '浅色模式',
                       style: TextStyle(
-                        color: Colors.black,
                         fontSize: 12,
                       ),
                     ),
                     Icon(
                       Icons.keyboard_arrow_right,
-                      color: Colors.black,
                       size: 20,
                     ),
                   ],
@@ -229,7 +207,10 @@ class MyView extends GetView<MyController> {
               height: 50,
               // color: Color(0xFFFFEB3B),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  // 跳转页面
+                  Get.toNamed("/ad");
+                },
                 child: Row(
                   // 主轴间隔显示
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -239,17 +220,12 @@ class MyView extends GetView<MyController> {
                     // 左边组件
                     Text(
                       '封面广告',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
                     ),
                     // 中间组件
                     Spacer(),
                     // 右边组件
                     Icon(
                       Icons.keyboard_arrow_right,
-                      color: Colors.black,
                       size: 20,
                     ),
                   ],
@@ -286,10 +262,6 @@ class MyView extends GetView<MyController> {
                     // 左边组件
                     Text(
                       '版本更新',
-                      style: TextStyle(
-                        // color: Colors.black,
-                        fontSize: 14,
-                      ),
                     ),
                     // 中间组件
                     Spacer(),
@@ -297,7 +269,6 @@ class MyView extends GetView<MyController> {
                     Text(
                       '1.0.0',
                       style: TextStyle(
-                        // color: Colors.black,
                         fontSize: 12,
                       ),
                     ),
@@ -337,9 +308,9 @@ class MyView extends GetView<MyController> {
                     // 左边组件
                     Text(
                       '意见反馈',
-                      style: TextStyle(
-                        fontSize: 14,
-                      ),
+                      // style: TextStyle(
+                      //   fontSize: 14,
+                      // ),
                     ),
                     // 中间组件
                     Spacer(),
@@ -370,10 +341,27 @@ class MyView extends GetView<MyController> {
                 child: Text(
                   '退出登录',
                   // style: TextStyle(
-                  // color: Colors.red,
-                  // fontSize: 14,
-                  // ),
+                  //     // color: Colors.red,
+                  //     // fontSize: 14,
+                  //     ),
                 ),
+                // style: ButtonStyle(
+                //   // 按钮形状
+                //   shape: MaterialStateProperty.all(
+                //     RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(0),
+                //     ),
+                //   ),
+                //   // 背景颜色
+                //   backgroundColor: MaterialStateProperty.all(
+                //     Get.isDarkMode ? Color(0xFFFFFFFF) : Color(0x99FFFFFF),
+                //     // Color(0xFFFFFFFF),
+                //   ),
+                //   // 覆盖颜色
+                //   overlayColor: MaterialStateProperty.all(
+                //     Color(0xFFFFFFFF),
+                //   ),
+                // ),
               ),
             ),
           ],

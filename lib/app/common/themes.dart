@@ -1,5 +1,17 @@
 import 'package:flutter/material.dart';
 
+/// 定义主要颜色
+const primaryColor = Color(0xFFFFEB3B);
+
+/// 定义文字主要颜色
+const textPrimaryColor = Color(0xFF000000);
+
+/// 浅色模式背景颜色
+var lightBackgroundColor = Color(0xFFF4F4F4);
+
+/// 深色模式背景颜色
+var darkBackgroundColor = Color(0xFF000000);
+
 //////
 /// 自定义主题
 //////
@@ -28,14 +40,20 @@ class Themes {
         size: 18,
       ),
       // 背景颜色
-      backgroundColor: Color(0xFFFFEB3B),
+      backgroundColor: Color(0xFFFFFFFF),
     ),
-    // 悬浮按钮主题
+
+    //////
+    /// 悬浮按钮主题
+    //////
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       foregroundColor: Color(0xFF000000),
-      backgroundColor: Color(0xFFFFEB3B),
+      backgroundColor: Color(0xFFFFFFFF),
     ),
-    // 文本按钮主题
+
+    //////
+    /// 文本按钮主题
+    //////
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         // 形状
@@ -58,7 +76,10 @@ class Themes {
         ),
       ),
     ),
-    // 字体主题
+
+    //////
+    /// 字体主题
+    //////
     textTheme: TextTheme(
       bodyLarge: TextStyle(
         color: Color(0xFF000000),
@@ -71,8 +92,10 @@ class Themes {
       ),
     ),
 
-    // 背景颜色
-    scaffoldBackgroundColor: Colors.grey.shade100,
+    //////
+    /// 背景颜色
+    //////
+    scaffoldBackgroundColor: Color(0xFFF4F4F4),
   );
 
   //////
@@ -101,12 +124,18 @@ class Themes {
       // 背景颜色
       backgroundColor: Color(0xFF1C1B20),
     ),
-    // 悬浮按钮主题
+
+    //////
+    /// 悬浮按钮主题
+    //////
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       foregroundColor: Color(0xFFE6E1E5),
       backgroundColor: Color(0xFF1C1B20),
     ),
-    // 文本按钮主题
+
+    //////
+    /// 文本按钮主题
+    //////
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         // 形状
@@ -121,15 +150,18 @@ class Themes {
         ),
         // 背景颜色
         backgroundColor: MaterialStateProperty.all(
-          Color(0xFF393939),
+          Color(0xFF1C1B20),
         ),
         // 覆盖颜色
         overlayColor: MaterialStateProperty.all(
-          Color(0xFF393939),
+          Color(0xFF1C1B20),
         ),
       ),
     ),
-    // 字体主题
+
+    //////
+    /// 字体主题
+    //////
     textTheme: TextTheme(
       bodyLarge: TextStyle(
         color: Color(0xFFE6E1E5),
@@ -145,6 +177,6 @@ class Themes {
     //////
     /// 背景颜色
     //////
-    scaffoldBackgroundColor: Color(0xFF303030),
+    scaffoldBackgroundColor: Color(0xFF000000),
   );
 }
