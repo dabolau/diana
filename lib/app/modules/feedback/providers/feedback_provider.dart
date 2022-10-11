@@ -1,4 +1,3 @@
-import 'package:diana/app/modules/feedback/controllers/feedback_controller.dart';
 import 'package:get/get.dart';
 
 import '../feedback_model.dart';

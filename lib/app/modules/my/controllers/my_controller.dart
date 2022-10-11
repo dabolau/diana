@@ -3,7 +3,9 @@ import 'package:diana/app/modules/my/providers/version_provider.dart';
 import 'package:get/get.dart';
 
 class MyController extends GetxController {
+  //////
   /// 获取版本信息
+  //////
   void getAllVersion() async {
     // 发送请求
     var version = await VersionProvider().getAllVersion();

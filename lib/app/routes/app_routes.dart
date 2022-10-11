@@ -8,6 +8,7 @@ abstract class Routes {
   static const SEARCH = _Paths.SEARCH;
   static const FEEDBACK = _Paths.FEEDBACK;
   static const AD = _Paths.AD;
+  static const PLAY = _Paths.PLAY;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const SEARCH = '/search';
   static const FEEDBACK = '/feedback';
   static const AD = '/ad';
+  static const PLAY = '/play';
 }

@@ -1,0 +1,36 @@
+{
+    "Data": {
+        "ID": "63399f858d53569f22dfa43b",
+        "CreatedAt": "",
+        "UpdatedAt": "",
+        "DeletedAt": "",
+        "Name": "斯巴达克斯：血与沙",
+        "Category": "电视剧",
+        "Type": "欧美剧",
+        "Area": "美国",
+        "Language": "英语",
+        "Director": "Grady,Hall",
+        "Actor": "安迪·怀特菲尔德,马努·贝内特,Erin,Cummings,Nick,Tarabay,Antonio,Te,Maioho",
+        "Year": "2010",
+        "Score": "9.0",
+        "Status": "更新至13集已完结",
+        "Description": "剧集讲述斯巴达克斯从奴隶变成英雄的血泪辛酸史。被罗马人背叛，流放成奴隶，变为角斗士——斯巴达克斯被迫背井离乡，离开自己最爱的女人，被放置于罗马最残忍，也是最盛行的娱乐场所角斗场中。但是血腥的战斗仅仅是悲剧的一部分，斯巴达克斯还要经得住财富，腐败，诱惑的考验。要想活命，他必须成为男人中的男人，一名勇士。要想活命，他必须成为比角斗士更重要的角色——一个传奇。",
+        "Picture": "https://img.wolongimg.com:65/upload/vod/20220102-1/0d20c0486f553994be15bf47c27430e4.jpg",
+        "URLs": [
+            {
+                "Name": "第01集",
+                "URL": "https://wolongzywcdn3.com:65/20220502/FCAf66nW/index.m3u8"
+            },
+            {
+                "Name": "第02集",
+                "URL": "https://wolongzywcdn3.com:65/20220502/BV5Jjw5C/index.m3u8"
+            },
+            {
+                "Name": "第03集",
+                "URL": "https://wolongzywcdn3.com:65/20220502/MXBQVckl/index.m3u8"
+            }
+        ]
+    },
+    "Message": "查询成功",
+    "StatusCode": 200
+}

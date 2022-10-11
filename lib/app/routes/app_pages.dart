@@ -8,6 +8,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/my/bindings/my_binding.dart';
 import '../modules/my/views/my_view.dart';
+import '../modules/play/bindings/play_binding.dart';
+import '../modules/play/views/play_view.dart';
 import '../modules/search/bindings/search_binding.dart';
 import '../modules/search/views/search_view.dart';
 
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.AD,
       page: () => AdView(),
       binding: AdBinding(),
+    ),
+    GetPage(
+      name: _Paths.PLAY,
+      page: () => PlayView(),
+      binding: PlayBinding(),
     ),
   ];
 }
