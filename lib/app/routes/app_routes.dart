@@ -9,6 +9,11 @@ abstract class Routes {
   static const FEEDBACK = _Paths.FEEDBACK;
   static const AD = _Paths.AD;
   static const PLAY = _Paths.PLAY;
+  static const LOGIN = _Paths.LOGIN;
+  static const REGISTER = _Paths.REGISTER;
+  static const CHANGEPASSWORD = _Paths.CHANGEPASSWORD;
+  static const GETPASSWORD = _Paths.GETPASSWORD;
+  static const ACCOUNT = _Paths.ACCOUNT;
 }
 
 abstract class _Paths {
@@ -19,4 +24,9 @@ abstract class _Paths {
   static const FEEDBACK = '/feedback';
   static const AD = '/ad';
   static const PLAY = '/play';
+  static const LOGIN = '/login';
+  static const REGISTER = '/register';
+  static const CHANGEPASSWORD = '/changepassword';
+  static const GETPASSWORD = '/getpassword';
+  static const ACCOUNT = '/account';
 }

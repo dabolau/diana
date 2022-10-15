@@ -43,7 +43,11 @@ class MyView extends GetView<MyController> {
               // color: Color(0xFFFFEB3B),
               child: TextButton(
                 onPressed: () {
-                  Get.toNamed("play");
+                  // Get.toNamed("/play");
+                  // Get.toNamed("/login");
+                  // Get.toNamed("/register");
+                  // Get.toNamed("/getpassword");
+                  Get.toNamed("/account");
                 },
                 child: Row(
                   // 主轴间隔显示
@@ -52,6 +56,9 @@ class MyView extends GetView<MyController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // 左边组件
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       '账号信息',
                     ),
@@ -89,6 +96,9 @@ class MyView extends GetView<MyController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // 左边组件
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       '安全隐私',
                     ),
@@ -127,6 +137,9 @@ class MyView extends GetView<MyController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // 左边组件
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       '多国语言',
                     ),
@@ -175,6 +188,9 @@ class MyView extends GetView<MyController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // 左边组件
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       '主题样式',
                     ),
@@ -220,6 +236,9 @@ class MyView extends GetView<MyController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // 左边组件
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       '封面广告',
                     ),
@@ -262,6 +281,9 @@ class MyView extends GetView<MyController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // 左边组件
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       '版本更新',
                     ),
@@ -308,6 +330,9 @@ class MyView extends GetView<MyController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // 左边组件
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       '意见反馈',
                       // style: TextStyle(

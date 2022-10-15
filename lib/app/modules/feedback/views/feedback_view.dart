@@ -6,9 +6,13 @@ import 'package:get/get.dart';
 import '../controllers/feedback_controller.dart';
 
 class FeedbackView extends GetView<FeedbackController> {
+  /// 表单全局秘钥
   final formKey = GlobalKey<FormState>();
-// 定义变量
+
+  /// 反馈描述
   String description = '';
+
+  /// 反馈邮箱
   String email = '';
 
   @override
@@ -56,13 +60,15 @@ class FeedbackView extends GetView<FeedbackController> {
                     maxLength: 200,
                     // 表单文本框初始值
                     initialValue: "1234567890",
-
                     decoration: InputDecoration(
                       hintText: '请输入您的意见或建议',
                       border: InputBorder.none,
                     ),
                     style: TextStyle(
-                      color: textPrimaryColor,
+                      // color: lightTextPrimaryColor,
+                      color: Get.isDarkMode
+                          ? darkTextPrimaryColor
+                          : lightTextPrimaryColor,
                     ),
                     // 验证数据
                     validator: (value) {
@@ -94,7 +100,10 @@ class FeedbackView extends GetView<FeedbackController> {
                       border: InputBorder.none,
                     ),
                     style: TextStyle(
-                      color: textPrimaryColor,
+                      // color: lightTextPrimaryColor,
+                      color: Get.isDarkMode
+                          ? darkTextPrimaryColor
+                          : lightTextPrimaryColor,
                     ),
                     // 验证数据
                     validator: (value) {
@@ -148,8 +157,8 @@ class FeedbackView extends GetView<FeedbackController> {
                       '提交',
                       style: TextStyle(
                         color: Get.isDarkMode
-                            ? textPrimaryColor
-                            : textPrimaryColor,
+                            ? darkTextPrimaryColor
+                            : lightTextPrimaryColor,
                         // fontSize: 12,
                       ),
                     ),
@@ -162,11 +171,11 @@ class FeedbackView extends GetView<FeedbackController> {
                       ),
                       // 背景颜色
                       backgroundColor: MaterialStateProperty.all(
-                        Get.isDarkMode ? primaryColor : primaryColor,
+                        Get.isDarkMode ? lightPrimaryColor : lightPrimaryColor,
                       ),
                       // 覆盖颜色
                       overlayColor: MaterialStateProperty.all(
-                        Get.isDarkMode ? primaryColor : primaryColor,
+                        Get.isDarkMode ? lightPrimaryColor : lightPrimaryColor,
                       ),
                     ),
                   ),
