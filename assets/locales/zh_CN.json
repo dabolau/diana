@@ -1,0 +1,21 @@
+{
+    "appbars": {
+        "my": "我的"
+    },
+    "themes": {
+        "light": "浅色模式",
+        "dark": "深色模式"
+    },
+    "buttons": {
+        "account": "账号信息",
+        "privacy_security": "隐私安全",
+        "language": "多国语言",
+        "theme": "主题样式",
+        "ad": "封面广告",
+        "version": "版本更新",
+        "feedback": "意见反馈",
+        "login": "登录",
+        "register": "注册",
+        "logout": "注销"
+    }
+}

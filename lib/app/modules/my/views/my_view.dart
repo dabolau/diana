@@ -10,7 +10,7 @@ class MyView extends GetView<MyController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('我的'),
+        title: Text('appbars_my'.tr),
         centerTitle: true,
         elevation: 0,
       ),
@@ -60,7 +60,7 @@ class MyView extends GetView<MyController> {
                       width: 5,
                     ),
                     Text(
-                      '账号信息',
+                      'buttons_account'.tr,
                     ),
                     // 中间组件
                     Spacer(),
@@ -100,7 +100,7 @@ class MyView extends GetView<MyController> {
                       width: 5,
                     ),
                     Text(
-                      '安全隐私',
+                      'buttons_privacy_security'.tr,
                     ),
                     // 中间组件
                     Spacer(),
@@ -129,7 +129,33 @@ class MyView extends GetView<MyController> {
               height: 50,
               // color: Color(0xFFFFEB3B),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  /// 更换语言名称
+                  controller.localeName.value =
+                      (controller.localeName.value == '简体中文')
+                          ? 'English'
+                          : '简体中文';
+                  print(controller.localeName.value);
+
+                  /// 更换语言为简体中文
+                  if (controller.localeName.value == '简体中文') {
+                    var locale = Locale('zh', 'CN');
+
+                    /// 更新语言
+                    Get.updateLocale(locale);
+                  }
+
+                  /// 更换语言为美国英语
+                  if (controller.localeName.value == 'English') {
+                    var locale = Locale('en', 'US');
+
+                    /// 更新语言
+                    Get.updateLocale(locale);
+                  }
+
+                  /// 更新界面
+                  controller.update();
+                },
                 child: Row(
                   // 主轴间隔显示
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -141,17 +167,29 @@ class MyView extends GetView<MyController> {
                       width: 5,
                     ),
                     Text(
-                      '多国语言',
+                      'buttons_language'.tr,
                     ),
                     // 中间组件
                     // Container(),
                     Spacer(),
                     // 右边组件
-                    Text(
-                      '简体中文',
-                      style: TextStyle(
-                        fontSize: 12,
-                      ),
+                    // Text(
+                    //   '简体中文',
+                    //   style: TextStyle(
+                    //     fontSize: 12,
+                    //   ),
+                    // ),
+                    // 界面刷新显示数据
+                    GetBuilder<MyController>(
+                      init: MyController(),
+                      builder: (controller) {
+                        return Text(
+                          '${controller.localeName}',
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        );
+                      },
                     ),
                     Icon(
                       Icons.keyboard_arrow_right,
@@ -167,7 +205,6 @@ class MyView extends GetView<MyController> {
             SizedBox(
               height: 1,
             ),
-
             //////
             // 主题样式
             //////
@@ -178,8 +215,15 @@ class MyView extends GetView<MyController> {
               // color: Color(0xFFFFEB3B),
               child: TextButton(
                 onPressed: () {
-                  // 更换主题
+                  /// 更换主题名称
+                  controller.themeName.value =
+                      Get.isDarkMode ? 'themes_light'.tr : 'themes_dark'.tr;
+
+                  /// 更换主题
                   Get.changeTheme(Get.isDarkMode ? Themes.light : Themes.dark);
+
+                  /// 更新界面
+                  controller.update();
                 },
                 child: Row(
                   // 主轴间隔显示
@@ -192,16 +236,28 @@ class MyView extends GetView<MyController> {
                       width: 5,
                     ),
                     Text(
-                      '主题样式',
+                      'buttons_theme'.tr,
                     ),
                     // 中间组件
                     Spacer(),
                     // 右边组件
-                    Text(
-                      '浅色模式',
-                      style: TextStyle(
-                        fontSize: 12,
-                      ),
+                    // Text(
+                    //   Get.isDarkMode ? '浅色模式' : '深色模式',
+                    //   style: TextStyle(
+                    //     fontSize: 12,
+                    //   ),
+                    // ),
+                    // 界面刷新显示数据
+                    GetBuilder<MyController>(
+                      init: MyController(),
+                      builder: (controller) {
+                        return Text(
+                          '${controller.themeName}',
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        );
+                      },
                     ),
                     Icon(
                       Icons.keyboard_arrow_right,
@@ -240,7 +296,7 @@ class MyView extends GetView<MyController> {
                       width: 5,
                     ),
                     Text(
-                      '封面广告',
+                      'buttons_ad'.tr,
                     ),
                     // 中间组件
                     Spacer(),
@@ -285,7 +341,7 @@ class MyView extends GetView<MyController> {
                       width: 5,
                     ),
                     Text(
-                      '版本更新',
+                      'buttons_version'.tr,
                     ),
                     // 中间组件
                     Spacer(),
@@ -334,7 +390,7 @@ class MyView extends GetView<MyController> {
                       width: 5,
                     ),
                     Text(
-                      '意见反馈',
+                      'buttons_feedback'.tr,
                       // style: TextStyle(
                       //   fontSize: 14,
                       // ),
@@ -366,7 +422,7 @@ class MyView extends GetView<MyController> {
               child: TextButton(
                 onPressed: () {},
                 child: Text(
-                  '退出登录',
+                  'buttons_logout'.tr,
                   // style: TextStyle(
                   //     // color: Colors.red,
                   //     // fontSize: 14,

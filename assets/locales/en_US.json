@@ -1,0 +1,21 @@
+{
+    "appbars": {
+        "my": "My"
+    },
+    "themes": {
+        "light": "Light",
+        "dark": "Dark"
+    },
+    "buttons": {
+        "account": "Account",
+        "privacy_security": "Privacy security",
+        "language": "Language",
+        "theme": "Theme",
+        "ad": "Ad",
+        "version": "Version",
+        "feedback": "Feedback",
+        "login": "Login",
+        "register": "Register",
+        "logout": "Logout"
+    }
+}
