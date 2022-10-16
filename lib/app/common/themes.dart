@@ -10,7 +10,7 @@ const lightTextPrimaryColor = Color(0xFF000000);
 const darkPrimaryColor = Color(0xFF1C1B20);
 
 /// 深色主要文字颜色
-const darkTextPrimaryColor =  Color(0xFF000000);
+const darkTextPrimaryColor = Color(0xFF000000);
 
 /// 浅色背景颜色
 var lightBackgroundColor = Color(0xFFF4F4F4);
@@ -87,8 +87,28 @@ class Themes {
       ),
     ),
 
+    /// 图标颜色
+    iconTheme: IconThemeData(
+      color: Color(0xFF000000),
+    ),
+
     /// 字体主题
     textTheme: TextTheme(
+      /// 大型标题字体
+      titleLarge: TextStyle(
+        color: Color(0xFF000000),
+      ),
+
+      /// 中型标题字体
+      titleMedium: TextStyle(
+        color: Color(0xFF000000),
+      ),
+
+      /// 小型标题字体
+      titleSmall: TextStyle(
+        color: Color(0xFF000000),
+      ),
+
       /// 大型字体
       bodyLarge: TextStyle(
         color: Color(0xFF000000),
@@ -176,8 +196,28 @@ class Themes {
       ),
     ),
 
+    /// 图标颜色
+    iconTheme: IconThemeData(
+      color: Color(0xFFE6E1E5),
+    ),
+
     /// 字体主题
     textTheme: TextTheme(
+      /// 大型标题字体
+      titleLarge: TextStyle(
+        color: Color(0xFFE6E1E5),
+      ),
+
+      /// 中型标题字体
+      titleMedium: TextStyle(
+        color: Color(0xFFE6E1E5),
+      ),
+
+      /// 小型标题字体
+      titleSmall: TextStyle(
+        color: Color(0xFFE6E1E5),
+      ),
+
       /// 大型字体
       bodyLarge: TextStyle(
         color: Color(0xFFE6E1E5),

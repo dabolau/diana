@@ -88,7 +88,9 @@ class MyView extends GetView<MyController> {
               height: 50,
               // color: Color(0xFFFFEB3B),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed("/play");
+                },
                 child: Row(
                   // 主轴间隔显示
                   mainAxisAlignment: MainAxisAlignment.center,
