@@ -1,6 +1,7 @@
 import 'package:diana/app/common/themes.dart';
 import 'package:diana/generated/locales.g.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:get/get.dart';
 
@@ -14,6 +15,17 @@ void main() {
 
       /// 调试模式
       debugShowCheckedModeBanner: false,
+
+      /// 多国语言，解决输入框中语言切换问题
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('zh', 'CN'),
+        const Locale('en', 'US'),
+      ],
 
       /// 多国语言
       translationsKeys: AppTranslation.translations, // 多国语言配置

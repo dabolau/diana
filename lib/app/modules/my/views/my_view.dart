@@ -89,7 +89,9 @@ class MyView extends GetView<MyController> {
               // color: Color(0xFFFFEB3B),
               child: TextButton(
                 onPressed: () {
-                  Get.toNamed("/play");
+                  // Get.toNamed("/play");
+                  Get.toNamed("/search");
+
                 },
                 child: Row(
                   // 主轴间隔显示

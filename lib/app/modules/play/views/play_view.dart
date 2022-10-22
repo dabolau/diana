@@ -18,7 +18,7 @@ class PlayView extends GetView<PlayController> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           /// 获取视频信息
-          controller.getVideo();
+          controller.getVideo('63399f858d53569f22dfa43b');
         },
         child: Icon(Icons.add),
         elevation: 0,
