@@ -1,6 +1,7 @@
 import 'package:chewie/chewie.dart';
 import 'package:diana/app/modules/play/providers/video_provider.dart';
 import 'package:diana/app/modules/play/video_model.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
@@ -11,94 +12,122 @@ class PlayController extends GetxController {
   /// 播放器控制器
   ChewieController? chewieController;
 
-  //////
-  /// 获取视频信息
-  //////
-  void getVideo(String id) async {
-    /// 发送请求
-    var video = await VideoProvider().getVideo(id);
-    print(video?.data?.id);
-    print(video?.data?.name);
-    print(video?.data?.picture);
-    print(video?.data?.urls);
-    // print(video?.data?.urls?[0].name);
-    // print(video?.data?.urls?[0].url);
+  /// 视频信息
+  dynamic videoArguments;
 
-    /// 判断资源为空直接返回
-    if (video?.data?.urls == null) {
-      return;
-    }
+  /// 视频名称
+  var name = ''.obs;
 
-    /// 资源不为空循序出所有资源信息
-    for (var url in (video?.data?.urls)!) {
-      print(url.name);
-      print(url.url);
-    }
+  /// 视频地址
+  var url = ''.obs;
+
+  /// 播放视频
+  void playVideo() {
+    /// 销毁控制器
+    videoPlayerController?.dispose();
+
+    /// 销毁控制器
+    chewieController?.dispose();
+
+    /// 获取视频集数和视频地址
+    print("########");
+    print("### ${name} ${url}");
+    print("########");
+
+    /// 初始化控制器
+    videoPlayerController = VideoPlayerController.network(url.value);
+
+    /// 初始化控制器
+    chewieController = ChewieController(
+      videoPlayerController: videoPlayerController!,
+      // 比例
+      aspectRatio: 16 / 9,
+      // 自动播放
+      // autoPlay: true,
+      // 循环
+      looping: true,
+    );
   }
+
+  // //////
+  // /// 获取视频信息
+  // //////
+  // void getVideo(String id) async {
+  //   /// 发送请求
+  //   var video = await VideoProvider().getVideo(id);
+  //   print(video?.data?.id);
+  //   print(video?.data?.name);
+  //   print(video?.data?.picture);
+  //   print(video?.data?.urls);
+  //   // print(video?.data?.urls?[0].name);
+  //   // print(video?.data?.urls?[0].url);
+
+  //   /// 判断资源为空直接返回
+  //   if (video?.data?.urls == null) {
+  //     return;
+  //   }
+
+  //   /// 资源不为空循序出所有资源信息
+  //   for (var url in (video?.data?.urls)!) {
+  //     print(url.name);
+  //     print(url.url);
+  //   }
+  // }
 
   @override
   void onInit() async {
     super.onInit();
 
-    var arguments = Get.arguments;
-    print(arguments);
-    if (arguments == null) {
-      print('空的');
+    /// 初始化控制器
+    videoPlayerController = VideoPlayerController.network(url.value);
 
-      /// 初始化控制器
-      videoPlayerController = VideoPlayerController.network(
-          '');
+    /// 初始化控制器
+    chewieController = ChewieController(
+      videoPlayerController: videoPlayerController!,
+      // 比例
+      aspectRatio: 16 / 9,
+      // 自动播放
+      // autoPlay: true,
+      // 循环
+      looping: true,
+    );
 
-      /// 初始化控制器
-      chewieController = ChewieController(
-        videoPlayerController: videoPlayerController!,
-        // 比例
-        aspectRatio: 16 / 9,
-        // 自动播放
-        // autoPlay: true,
-        // 循环
-        looping: true,
-      );
-    } else {
-      print(arguments['ID']);
-      print(arguments['Name']);
-      for (var url in arguments['URLs']) {
-        print(url['Name']);
-        print(url['URL']);
-      }
+    /// 获取页面传递的视频数据
+    videoArguments = Get.arguments;
+    print(videoArguments);
+    print("########");
+    print("### 共有 ${videoArguments["URLs"].length} 集");
+    print("########");
 
-      /// 初始化控制器
-      videoPlayerController = VideoPlayerController.network(
-          arguments['URLs'][0]['URL']);
+    /// 判断数据是否为空
+    if (videoArguments != null) {
+      /// 当数据不为空时
+      print('不为空');
 
-      /// 初始化控制器
-      chewieController = ChewieController(
-        videoPlayerController: videoPlayerController!,
-        // 比例
-        aspectRatio: 16 / 9,
-        // 自动播放
-        // autoPlay: true,
-        // 循环
-        looping: true,
-      );
+      /// 赋值
+      name.value = videoArguments['URLs'][0]['Name'];
+      url.value = videoArguments['URLs'][0]['URL'];
+
+      /// 播放视频
+      playVideo();
+
+      // /// 初始化控制器
+      // videoPlayerController =
+      //     VideoPlayerController.network(videoArguments['URLs'][0]['URL']);
+
+      // /// 初始化控制器
+      // chewieController = ChewieController(
+      //   videoPlayerController: videoPlayerController!,
+      //   // 比例
+      //   aspectRatio: 16 / 9,
+      //   // 自动播放
+      //   // autoPlay: true,
+      //   // 循环
+      //   looping: true,
+      // );
     }
 
     print('初始化就绪');
-
-    // /// 初始化控制器
-    // videoPlayerController = VideoPlayerController.network(
-    //     'https://wolongzywcdn3.com:65/eyQ9nWRE/index.m3u8');
-
-    // /// 初始化控制器
-    // chewieController = ChewieController(
-    //   videoPlayerController: videoPlayerController!,
-    //   // 比例
-    //   aspectRatio: 16 / 9,
-    //   // 自动播放
-    //   // autoPlay: true,
-    //   // 循环
-    //   looping: true,
-    // );
   }
 
   @override

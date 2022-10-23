@@ -93,16 +93,16 @@ class SearchView extends GetView<SearchController> {
                         controller.update();
                       },
                       child: Container(
-                        width: 15,
-                        height: 15,
+                        width: 20,
+                        height: 20,
                         decoration: BoxDecoration(
                           color: Colors.grey,
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         child: Icon(
                           Icons.close_outlined,
                           color: Colors.black,
-                          size: 10,
+                          size: 15,
                         ),
                       ),
                     ),
