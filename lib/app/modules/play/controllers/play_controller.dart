@@ -4,6 +4,7 @@ import 'package:diana/app/modules/play/video_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
+import 'package:wakelock/wakelock.dart';
 
 class PlayController extends GetxController {
   /// 播放器控制器
@@ -21,8 +22,11 @@ class PlayController extends GetxController {
   /// 视频地址
   var url = ''.obs;
 
+  /// 显示广告
+  var showAds = true.obs;
+
   /// 播放视频
-  void playVideo() {
+  void playVideo() async {
     /// 销毁控制器
     videoPlayerController?.dispose();
 
@@ -43,10 +47,15 @@ class PlayController extends GetxController {
       // 比例
       aspectRatio: 16 / 9,
       // 自动播放
-      // autoPlay: true,
+      autoPlay: true,
       // 循环
       looping: true,
     );
+
+    /// 保持屏幕不息屏
+    Wakelock.enable();
+    bool wakelockEnabled = await Wakelock.enabled;
+    print('屏幕常亮 ${wakelockEnabled}');
   }
 
   // //////
@@ -108,23 +117,11 @@ class PlayController extends GetxController {
       name.value = videoArguments['URLs'][0]['Name'];
       url.value = videoArguments['URLs'][0]['URL'];
 
+      /// 关闭广告
+      showAds.value = false;
+
       /// 播放视频
       playVideo();
-
-      // /// 初始化控制器
-      // videoPlayerController =
-      //     VideoPlayerController.network(videoArguments['URLs'][0]['URL']);
-
-      // /// 初始化控制器
-      // chewieController = ChewieController(
-      //   videoPlayerController: videoPlayerController!,
-      //   // 比例
-      //   aspectRatio: 16 / 9,
-      //   // 自动播放
-      //   // autoPlay: true,
-      //   // 循环
-      //   looping: true,
-      // );
     }
 
     print('初始化就绪');

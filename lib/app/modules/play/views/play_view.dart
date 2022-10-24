@@ -3,32 +3,20 @@ import 'package:diana/app/common/themes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:video_player/video_player.dart';
 
 import '../controllers/play_controller.dart';
 
 class PlayView extends GetView<PlayController> {
-  /// 标签控制器
-  // TabController? tabController;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // 解决键盘溢出的问题
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('播放器'),
         centerTitle: true,
         elevation: 0,
       ),
-
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     /// 获取视频信息
-      //     controller.getVideo('63399f858d53569f22dfa43b');
-      //   },
-      //   child: Icon(Icons.add),
-      //   elevation: 0,
-      // ),
-
       body: GetBuilder<PlayController>(
         init: PlayController(),
         builder: (controller) {
@@ -45,47 +33,101 @@ class PlayView extends GetView<PlayController> {
                   /// 宽高比16:9
                   width: MediaQuery.of(context).size.width / 16 * 16,
                   height: MediaQuery.of(context).size.width / 16 * 9,
-                  child: Stack(children: [
-                    /// 播放器
-                    Positioned(
-                      left: 0,
-                      top: 0,
-                      right: 0,
-                      bottom: 0,
-                      child: Chewie(controller: controller.chewieController!),
-                    ),
+                  child: Stack(
+                    children: [
+                      /// 播放器
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        child: Chewie(controller: controller.chewieController!),
+                      ),
 
-                    // /// 广告
-                    // Positioned(
-                    //   left: 0,
-                    //   top: 0,
-                    //   right: 0,
-                    //   bottom: 0,
-                    //   child: Container(
-                    //     color: Colors.black,
-                    //     child: Text('广告'),
-                    //   ),
-                    // ),
-
-                    /// 返回按钮
-                    Positioned(
-                      left: 0,
-                      top: 0,
-                      // right: 0,
-                      // bottom: 0,
-                      child: IconButton(
-                        onPressed: (() {
-                          /// 返回
-                          Get.back();
-                        }),
-                        icon: Icon(
-                          Icons.keyboard_arrow_left,
-                          color: Colors.white,
-                          size: 35,
+                      /// 广告
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        child: Offstage(
+                          /// 当组件为true时隐藏，为false时显示
+                          offstage:
+                              controller.showAds.value == true ? false : true,
+                          child: Container(
+                            color: Colors.black,
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  left: 0,
+                                  top: 0,
+                                  right: 0,
+                                  bottom: 0,
+                                  child: Container(
+                                    child: Image.network(
+                                      'https://img.wolongimg.com:65/upload/vod/20221009-1/c2c293d72a12e88da552c2080bfec404.jpg',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                //////
+                                /// 关闭按钮
+                                //////
+                                Positioned(
+                                  top: 20,
+                                  right: 20,
+                                  child: Container(
+                                    width: 80,
+                                    height: 30,
+                                    child: TextButton(
+                                      onPressed: () {
+                                        print('关闭广告');
+                                        // 关闭广告
+                                        controller.showAds.value = false;
+                                        // 播放视频
+                                        controller.playVideo();
+                                        // 更新界面
+                                        controller.update();
+                                      },
+                                      child: Text('关闭广告'),
+                                      style: ButtonStyle(
+                                        // 清除内边距
+                                        minimumSize: MaterialStateProperty.all(
+                                            Size.zero),
+                                        padding: MaterialStateProperty.all(
+                                            EdgeInsets.zero),
+                                        // 形状
+                                        shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                          ),
+                                        ),
+                                        // 前景颜色
+                                        foregroundColor:
+                                            MaterialStateProperty.all(
+                                          Color(0xFFE6E1E5),
+                                        ),
+                                        // 背景颜色
+                                        backgroundColor:
+                                            MaterialStateProperty.all(
+                                          Color(0x99393939),
+                                        ),
+                                        // 覆盖颜色
+                                        overlayColor: MaterialStateProperty.all(
+                                          Color(0x99393939),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ]),
+                    ],
+                  ),
                 ),
 
                 //////
@@ -119,6 +161,9 @@ class PlayView extends GetView<PlayController> {
                           indicatorWeight: 2, // 高度
                           indicatorSize: TabBarIndicatorSize.label, // 长度
                           tabs: [
+                            // Tab(
+                            //   text: '广告',
+                            // ),
                             Tab(
                               text: '剧集',
                             ),
@@ -142,6 +187,15 @@ class PlayView extends GetView<PlayController> {
                             60,
                         child: TabBarView(
                           children: [
+                            // //////
+                            // /// 广告内容
+                            // //////
+                            // Container(
+                            //   child: Center(
+                            //     child: Text('广告'),
+                            //   ),
+                            // ),
+
                             //////
                             /// 剧集内容
                             //////
@@ -160,7 +214,6 @@ class PlayView extends GetView<PlayController> {
                                       right: 10,
                                       bottom: 10,
                                     ),
-                                    // color: Colors.red,
                                     child: Row(
                                       children: [
                                         Text('选集'),
@@ -252,6 +305,16 @@ class PlayView extends GetView<PlayController> {
                                 ],
                               ),
                             ),
+
+                            // //////
+                            // /// 剧集内容
+                            // //////
+                            // Container(
+                            //   child: Center(
+                            //     child: Text('剧集'),
+                            //   ),
+                            // ),
+
                             //////
                             /// 简介内容
                             //////
@@ -373,6 +436,15 @@ class PlayView extends GetView<PlayController> {
                                 ],
                               ),
                             ),
+
+                            // //////
+                            // /// 简介内容
+                            // //////
+                            // Container(
+                            //   child: Center(
+                            //     child: Text('简介'),
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),
