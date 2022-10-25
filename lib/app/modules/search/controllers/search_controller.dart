@@ -17,7 +17,7 @@ class SearchController extends GetxController {
     print('搜索内容 ${text.value}');
 
     /// 发送请求
-    videos = await VideossProvider().getVideos(text.value);
+    videos = await VideosProvider().getVideos(text.value);
 
     /// 判断数据为空直接返回
     if (videos?.datas == null) {

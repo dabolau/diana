@@ -213,8 +213,10 @@ class SearchView extends GetView<SearchController> {
                       children: [
                         /// 左边
                         Container(
-                          width: 90,
-                          height: 160,
+                          width:
+                              (MediaQuery.of(context).size.width / 16 * 9) / 2,
+                          height:
+                              (MediaQuery.of(context).size.width / 16 * 16) / 2,
                           decoration: BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.circular(8),
