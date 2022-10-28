@@ -27,7 +27,7 @@ class ChangepasswordView extends GetView<ChangepasswordController> {
       // 防止键盘覆盖内容
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('修改密码'),
+        title: Text('appbars_changepassword'.tr),
         centerTitle: true,
         elevation: 0,
       ),
@@ -226,7 +226,7 @@ class ChangepasswordView extends GetView<ChangepasswordController> {
                     }
                   },
                   child: Text(
-                    '修改密码',
+                    'buttons_changepassword'.tr,
                     style: TextStyle(
                       color: Get.isDarkMode
                           ? darkTextPrimaryColor

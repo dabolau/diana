@@ -18,7 +18,7 @@ class GetpasswordView extends GetView<GetpasswordController> {
       // 防止键盘覆盖内容
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('找回密码'),
+        title: Text('appbars_getpassword'.tr),
         centerTitle: true,
         elevation: 0,
       ),
@@ -94,7 +94,7 @@ class GetpasswordView extends GetView<GetpasswordController> {
                     }
                   },
                   child: Text(
-                    '找回密码',
+                    'buttons_getpassword'.tr,
                     style: TextStyle(
                       color: Get.isDarkMode
                           ? darkTextPrimaryColor

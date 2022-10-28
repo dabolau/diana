@@ -1,5 +1,19 @@
 {
     "appbars": {
+        "home": "首页",
+        "search": "搜索",
+        "my": "我的",
+        "account": "账号信息",
+        "register": "注册",
+        "login": "登录",
+        "changepassword": "修改密码",
+        "getpassword": "找回密码",
+        "logout": "注销",
+        "feedback": "意见反馈"
+    },
+    "bottombars": {
+        "home": "首页",
+        "search": "搜索",
         "my": "我的"
     },
     "themes": {
@@ -7,15 +21,19 @@
         "dark": "深色模式"
     },
     "buttons": {
+        "search": "搜索",
         "account": "账号信息",
+        "register": "注册",
+        "login": "登录",
+        "changepassword": "修改密码",
+        "getpassword": "找回密码",
+        "logout": "注销",
         "privacy_security": "隐私安全",
         "language": "多国语言",
         "theme": "主题样式",
         "ad": "封面广告",
         "version": "版本更新",
         "feedback": "意见反馈",
-        "login": "登录",
-        "register": "注册",
-        "logout": "注销"
+        "submit": "提交"
     }
 }

@@ -208,10 +208,11 @@ class PlayView extends GetView<PlayController> {
                                   /// 选集导航栏
                                   //////
                                   Container(
+                                    // color: Colors.grey,
                                     margin: EdgeInsets.only(
                                       left: 10,
                                       top: 10,
-                                      right: 10,
+                                      right: 0,
                                       bottom: 10,
                                     ),
                                     child: Row(

@@ -21,7 +21,7 @@ class FeedbackView extends GetView<FeedbackController> {
         // 防止键盘覆盖内容
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: Text('意见反馈'),
+          title: Text('appbars_feedback'.tr),
           centerTitle: true,
           elevation: 0,
         ),
@@ -141,7 +141,7 @@ class FeedbackView extends GetView<FeedbackController> {
                       }
                     },
                     child: Text(
-                      '提交',
+                      'buttons_submit'.tr,
                       style: TextStyle(
                         color: Get.isDarkMode
                             ? darkTextPrimaryColor

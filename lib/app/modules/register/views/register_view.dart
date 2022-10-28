@@ -26,7 +26,7 @@ class RegisterView extends GetView<RegisterController> {
       // 防止键盘覆盖内容
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('注册'),
+        title: Text('appbars_register'.tr),
         centerTitle: true,
         elevation: 0,
       ),
@@ -217,7 +217,7 @@ class RegisterView extends GetView<RegisterController> {
                     }
                   },
                   child: Text(
-                    '注册',
+                    'buttons_register'.tr,
                     style: TextStyle(
                       color: Get.isDarkMode
                           ? darkTextPrimaryColor

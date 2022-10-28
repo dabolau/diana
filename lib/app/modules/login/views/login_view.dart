@@ -21,7 +21,7 @@ class LoginView extends GetView<LoginController> {
       // 防止键盘覆盖内容
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('登录'),
+        title: Text('appbars_login'.tr),
         centerTitle: true,
         elevation: 0,
       ),
@@ -139,7 +139,7 @@ class LoginView extends GetView<LoginController> {
                     }
                   },
                   child: Text(
-                    '登录',
+                    'buttons_login'.tr,
                     style: TextStyle(
                       color: Get.isDarkMode
                           ? darkTextPrimaryColor

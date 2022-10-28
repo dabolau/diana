@@ -69,7 +69,7 @@ class MainView extends GetView<MainController> {
                 // 更新界面
                 controller.update();
               },
-              items: const [
+              items: [
                 // 首页选项
                 BottomNavigationBarItem(
                   icon: Icon(
@@ -82,7 +82,7 @@ class MainView extends GetView<MainController> {
                     color: Colors.yellow,
                     size: 33,
                   ),
-                  label: "首页",
+                  label: 'bottombars_home'.tr,
                 ),
                 // 搜索选项
                 BottomNavigationBarItem(
@@ -96,7 +96,7 @@ class MainView extends GetView<MainController> {
                     color: Colors.yellow,
                     size: 33,
                   ),
-                  label: "搜索",
+                  label: 'bottombars_search'.tr,
                 ),
                 // 我的选项
                 BottomNavigationBarItem(
@@ -110,7 +110,7 @@ class MainView extends GetView<MainController> {
                     color: Colors.yellow,
                     size: 33,
                   ),
-                  label: "我的",
+                  label: 'bottombars_my'.tr,
                 ),
               ],
             );

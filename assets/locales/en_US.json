@@ -1,5 +1,19 @@
 {
     "appbars": {
+        "home": "Home",
+        "search": "Search",
+        "my": "My",
+        "account": "Account",
+        "register": "Register",
+        "login": "Login",
+        "changepassword": "Change password",
+        "getpassword": "Get password",
+        "logout": "Logout",
+        "feedback": "Feedback"
+    },
+    "bottombars": {
+        "home": "Home",
+        "search": "Search",
         "my": "My"
     },
     "themes": {
@@ -7,15 +21,19 @@
         "dark": "Dark"
     },
     "buttons": {
+        "search": "Search",
         "account": "Account",
+        "register": "Register",
+        "login": "Login",
+        "changepassword": "Change password",
+        "getpassword": "Get password",
+        "logout": "Logout",
         "privacy_security": "Privacy security",
         "language": "Language",
         "theme": "Theme",
         "ad": "Ad",
         "version": "Version",
         "feedback": "Feedback",
-        "login": "Login",
-        "register": "Register",
-        "logout": "Logout"
+        "submit": "Submit"
     }
 }

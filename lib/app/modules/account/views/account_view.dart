@@ -9,7 +9,7 @@ class AccountView extends GetView<AccountController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('账号信息'),
+        title: Text('appbars_account'.tr),
         centerTitle: true,
         elevation: 0,
       ),
@@ -47,7 +47,7 @@ class AccountView extends GetView<AccountController> {
                       width: 5,
                     ),
                     Text(
-                      '账号登录',
+                      'appbars_login'.tr,
                     ),
                     // 中间组件
                     Spacer(),
@@ -88,7 +88,7 @@ class AccountView extends GetView<AccountController> {
                       width: 5,
                     ),
                     Text(
-                      '账号注册',
+                      'appbars_register'.tr,
                     ),
                     // 中间组件
                     Spacer(),
@@ -129,7 +129,7 @@ class AccountView extends GetView<AccountController> {
                       width: 5,
                     ),
                     Text(
-                      '修改密码',
+                      'appbars_changepassword'.tr,
                     ),
                     // 中间组件
                     Spacer(),
@@ -170,7 +170,7 @@ class AccountView extends GetView<AccountController> {
                       width: 5,
                     ),
                     Text(
-                      '找回密码',
+                      'appbars_getpassword'.tr,
                     ),
                     // 中间组件
                     Spacer(),

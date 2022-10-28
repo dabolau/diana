@@ -9,7 +9,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('首页'),
+        title: Text('appbars_home'.tr),
         centerTitle: true,
         elevation: 0,
       ),
@@ -34,7 +34,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                         child: Row(
                           children: [
-                            Text('电影推荐'),
+                            Text('推荐电影'),
                             Spacer(),
                             IconButton(
                               onPressed: () {},
@@ -135,7 +135,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                         child: Row(
                           children: [
-                            Text('电视剧推荐'),
+                            Text('推荐电视剧'),
                             Spacer(),
                             IconButton(
                               onPressed: () {},
@@ -236,7 +236,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                         child: Row(
                           children: [
-                            Text('动漫推荐'),
+                            Text('推荐动漫'),
                             Spacer(),
                             IconButton(
                               onPressed: () {},
@@ -337,7 +337,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                         child: Row(
                           children: [
-                            Text('综艺推荐'),
+                            Text('推荐综艺'),
                             Spacer(),
                             IconButton(
                               onPressed: () {},

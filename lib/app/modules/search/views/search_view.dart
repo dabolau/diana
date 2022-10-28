@@ -143,7 +143,7 @@ class SearchView extends GetView<SearchController> {
                         }
                       },
                       child: Text(
-                        '搜索',
+                        'buttons_search'.tr,
                         // style: TextStyle(fontSize: 14,),
                       ),
                       style: ButtonStyle(
