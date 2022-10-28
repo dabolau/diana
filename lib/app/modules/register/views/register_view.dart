@@ -23,6 +23,8 @@ class RegisterView extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // 防止键盘覆盖内容
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('注册'),
         centerTitle: true,
@@ -47,7 +49,7 @@ class RegisterView extends GetView<RegisterController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "hello1",
+                  // initialValue: "hello1",
                   decoration: InputDecoration(
                     hintText: '请输入用户名',
                     border: InputBorder.none,
@@ -86,7 +88,7 @@ class RegisterView extends GetView<RegisterController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "hello1@qq.com",
+                  // initialValue: "hello1@qq.com",
                   decoration: InputDecoration(
                     hintText: '请输入邮箱',
                     border: InputBorder.none,
@@ -122,7 +124,7 @@ class RegisterView extends GetView<RegisterController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "12345678901",
+                  // initialValue: "12345678901",
                   decoration: InputDecoration(
                     hintText: '请输入移动电话',
                     border: InputBorder.none,
@@ -158,7 +160,7 @@ class RegisterView extends GetView<RegisterController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "123456",
+                  // initialValue: "123456",
                   decoration: InputDecoration(
                     hintText: '请输入密码',
                     border: InputBorder.none,
@@ -189,7 +191,6 @@ class RegisterView extends GetView<RegisterController> {
               SizedBox(
                 height: 10,
               ),
-              // Spacer(),
               //////
               // 注册按钮
               //////

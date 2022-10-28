@@ -5,7 +5,11 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
   /// 获取内容
   var text = ''.obs; // 名称
-  var year = '2022'.obs; // 年份
+  var category = ''.obs; // 类别
+  var type = ''.obs; // 类型
+  var area = ''.obs; // 地区
+  var language = ''.obs; // 语言
+  var year = ''.obs; // 年份
 
   /// 视频模型
   Videos? movieVideos;
@@ -20,9 +24,18 @@ class HomeController extends GetxController {
     /// 获取数据
     print('获取数据 ${text.value}');
 
+    /// 设置类别
+    category.value = '电影';
+
     /// 发送请求
-    movieVideos =
-        await VideosProvider().getVideos(text.value, '电影', year.value);
+    movieVideos = await VideosProvider().getVideos(
+      text: text.value,
+      category: category.value,
+      type: type.value,
+      area: area.value,
+      language: language.value,
+      year: year.value,
+    );
 
     /// 判断数据为空时
     if (movieVideos?.datas == null) {
@@ -48,8 +61,18 @@ class HomeController extends GetxController {
     /// 获取数据
     print('获取数据 ${text.value}');
 
+    /// 设置类别
+    category.value = '电视剧';
+
     /// 发送请求
-    tvVideos = await VideosProvider().getVideos(text.value, '电视剧', year.value);
+    tvVideos = await VideosProvider().getVideos(
+      text: text.value,
+      category: category.value,
+      type: type.value,
+      area: area.value,
+      language: language.value,
+      year: year.value,
+    );
 
     /// 判断数据为空时
     if (tvVideos?.datas == null) {
@@ -75,9 +98,18 @@ class HomeController extends GetxController {
     /// 获取数据
     print('获取数据 ${text.value}');
 
+    /// 设置类别
+    category.value = '动漫';
+
     /// 发送请求
-    animeVideos =
-        await VideosProvider().getVideos(text.value, '电视剧', year.value);
+    animeVideos = await VideosProvider().getVideos(
+      text: text.value,
+      category: category.value,
+      type: type.value,
+      area: area.value,
+      language: language.value,
+      year: year.value,
+    );
 
     /// 判断数据为空时
     if (animeVideos?.datas == null) {
@@ -103,9 +135,18 @@ class HomeController extends GetxController {
     /// 获取数据
     print('获取数据 ${text.value}');
 
+    /// 设置类别
+    category.value = '综艺';
+
     /// 发送请求
-    varietyVideos =
-        await VideosProvider().getVideos(text.value, '电视剧', year.value);
+    varietyVideos = await VideosProvider().getVideos(
+      text: text.value,
+      category: category.value,
+      type: type.value,
+      area: area.value,
+      language: language.value,
+      year: year.value,
+    );
 
     /// 判断数据为空时
     if (varietyVideos?.datas == null) {
@@ -128,9 +169,16 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
 
+    /// 获取电影
     getMovieVideos();
+
+    /// 获取电视剧
     getTvVideos();
+
+    /// 获取动漫
     getAnimeVideos();
+
+    /// 获取综艺
     getVarietyVideos();
   }
 

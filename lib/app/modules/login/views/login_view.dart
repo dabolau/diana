@@ -18,6 +18,8 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // 防止键盘覆盖内容
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('登录'),
         centerTitle: true,
@@ -42,7 +44,7 @@ class LoginView extends GetView<LoginController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "hello1",
+                  // initialValue: "hello1",
                   decoration: InputDecoration(
                     hintText: '请输入用户名',
                     border: InputBorder.none,
@@ -81,7 +83,7 @@ class LoginView extends GetView<LoginController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "123456",
+                  // initialValue: "123456",
                   decoration: InputDecoration(
                     hintText: '请输入密码',
                     border: InputBorder.none,

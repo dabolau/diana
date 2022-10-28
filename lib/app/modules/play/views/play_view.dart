@@ -10,7 +10,7 @@ class PlayView extends GetView<PlayController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // 解决键盘溢出的问题
+      // 防止键盘覆盖内容
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('播放器'),
@@ -201,8 +201,8 @@ class PlayView extends GetView<PlayController> {
                             //////
                             Container(
                               child: ListView(
-                                shrinkWrap:true,
-                                physics:NeverScrollableScrollPhysics(),
+                                // shrinkWrap:true,
+                                // physics:NeverScrollableScrollPhysics(),
                                 children: [
                                   //////
                                   /// 选集导航栏
@@ -320,8 +320,8 @@ class PlayView extends GetView<PlayController> {
                             //////
                             Container(
                               child: ListView(
-                                shrinkWrap:true,
-                                physics:NeverScrollableScrollPhysics(),
+                                // shrinkWrap:true,
+                                // physics:NeverScrollableScrollPhysics(),
                                 children: [
                                   Container(
                                     margin: EdgeInsets.only(

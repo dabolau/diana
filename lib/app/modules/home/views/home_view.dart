@@ -22,27 +22,29 @@ class HomeView extends GetView<HomeController> {
                 //////
                 // 电影推荐
                 //////
-                Container(
-                  // color: Colors.grey,
-                  margin: EdgeInsets.only(
-                    left: 10,
-                    top: 10,
-                    right: 0,
-                    bottom: 0,
-                  ),
-                  child: Row(
-                    children: [
-                      Text('电影推荐'),
-                      Spacer(),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.keyboard_arrow_right,
+                controller.movieVideos?.datas?.length == null
+                    ? Container()
+                    : Container(
+                        // color: Colors.grey,
+                        margin: EdgeInsets.only(
+                          left: 10,
+                          top: 10,
+                          right: 0,
+                          bottom: 0,
+                        ),
+                        child: Row(
+                          children: [
+                            Text('电影推荐'),
+                            Spacer(),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.keyboard_arrow_right,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
                 controller.movieVideos?.datas?.length == null
                     ? Container()
                     : Container(
@@ -121,27 +123,29 @@ class HomeView extends GetView<HomeController> {
                 //////
                 // 电视剧推荐
                 //////
-                Container(
-                  // color: Colors.grey,
-                  margin: EdgeInsets.only(
-                    left: 10,
-                    top: 10,
-                    right: 0,
-                    bottom: 0,
-                  ),
-                  child: Row(
-                    children: [
-                      Text('电视剧推荐'),
-                      Spacer(),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.keyboard_arrow_right,
+                controller.tvVideos?.datas?.length == null
+                    ? Container()
+                    : Container(
+                        // color: Colors.grey,
+                        margin: EdgeInsets.only(
+                          left: 10,
+                          top: 10,
+                          right: 0,
+                          bottom: 0,
+                        ),
+                        child: Row(
+                          children: [
+                            Text('电视剧推荐'),
+                            Spacer(),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.keyboard_arrow_right,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
                 controller.tvVideos?.datas?.length == null
                     ? Container()
                     : Container(
@@ -220,27 +224,29 @@ class HomeView extends GetView<HomeController> {
                 //////
                 // 动漫推荐
                 //////
-                Container(
-                  // color: Colors.grey,
-                  margin: EdgeInsets.only(
-                    left: 10,
-                    top: 10,
-                    right: 0,
-                    bottom: 0,
-                  ),
-                  child: Row(
-                    children: [
-                      Text('动漫推荐'),
-                      Spacer(),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.keyboard_arrow_right,
+                controller.animeVideos?.datas?.length == null
+                    ? Container()
+                    : Container(
+                        // color: Colors.grey,
+                        margin: EdgeInsets.only(
+                          left: 10,
+                          top: 10,
+                          right: 0,
+                          bottom: 0,
+                        ),
+                        child: Row(
+                          children: [
+                            Text('动漫推荐'),
+                            Spacer(),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.keyboard_arrow_right,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
                 controller.animeVideos?.datas?.length == null
                     ? Container()
                     : Container(
@@ -319,27 +325,29 @@ class HomeView extends GetView<HomeController> {
                 //////
                 // 综艺推荐
                 //////
-                Container(
-                  // color: Colors.grey,
-                  margin: EdgeInsets.only(
-                    left: 10,
-                    top: 10,
-                    right: 0,
-                    bottom: 0,
-                  ),
-                  child: Row(
-                    children: [
-                      Text('综艺推荐'),
-                      Spacer(),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.keyboard_arrow_right,
+                controller.varietyVideos?.datas?.length == null
+                    ? Container()
+                    : Container(
+                        // color: Colors.grey,
+                        margin: EdgeInsets.only(
+                          left: 10,
+                          top: 10,
+                          right: 0,
+                          bottom: 0,
+                        ),
+                        child: Row(
+                          children: [
+                            Text('综艺推荐'),
+                            Spacer(),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.keyboard_arrow_right,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
                 controller.varietyVideos?.datas?.length == null
                     ? Container()
                     : Container(

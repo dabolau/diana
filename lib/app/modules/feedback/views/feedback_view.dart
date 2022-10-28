@@ -18,26 +18,13 @@ class FeedbackView extends GetView<FeedbackController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        // 防止键盘覆盖内容
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text('意见反馈'),
           centerTitle: true,
           elevation: 0,
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () async {
-        //     // 默认主题切换
-        //     // Get.changeTheme(
-        //     //     Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
-        //     // 自定义主图切换
-        //     Get.changeTheme(Get.isDarkMode ? Themes.light : Themes.dark);
-        //     // 获取数据
-        //     // controller.getFeedback();
-        //     // 添加数据
-        //     // controller.postFeedback();
-        //   },
-        //   elevation: 0,
-        //   child: Icon(Icons.add),
-        // ),
         body: Container(
           child: Form(
             key: formKey,
@@ -59,7 +46,7 @@ class FeedbackView extends GetView<FeedbackController> {
                     maxLines: 6,
                     maxLength: 200,
                     // 表单文本框初始值
-                    initialValue: "1234567890",
+                    // initialValue: "1234567890",
                     decoration: InputDecoration(
                       hintText: '请输入您的意见或建议',
                       border: InputBorder.none,
@@ -94,7 +81,7 @@ class FeedbackView extends GetView<FeedbackController> {
                   color: Colors.white,
                   child: TextFormField(
                     // 表单文本框初始值
-                    initialValue: "d@qq.com",
+                    // initialValue: "d@qq.com",
                     decoration: InputDecoration(
                       hintText: '请输入您的邮箱，我们会联系您',
                       border: InputBorder.none,
@@ -123,13 +110,13 @@ class FeedbackView extends GetView<FeedbackController> {
                 SizedBox(
                   height: 10,
                 ),
-                // 界面刷新显示数据
-                GetBuilder<FeedbackController>(
-                  init: FeedbackController(),
-                  builder: (controller) {
-                    return Text('${controller.description}');
-                  },
-                ),
+                // // 界面刷新显示数据
+                // GetBuilder<FeedbackController>(
+                //   init: FeedbackController(),
+                //   builder: (controller) {
+                //     return Text('${controller.description}');
+                //   },
+                // ),
                 //////
                 // 提交按钮
                 //////

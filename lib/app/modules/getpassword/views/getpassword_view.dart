@@ -15,6 +15,8 @@ class GetpasswordView extends GetView<GetpasswordController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // 防止键盘覆盖内容
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('找回密码'),
         centerTitle: true,
@@ -39,7 +41,7 @@ class GetpasswordView extends GetView<GetpasswordController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "hello1@qq.com",
+                  // initialValue: "hello1@qq.com",
                   decoration: InputDecoration(
                     hintText: '请输入邮箱',
                     border: InputBorder.none,

@@ -24,6 +24,8 @@ class ChangepasswordView extends GetView<ChangepasswordController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // 防止键盘覆盖内容
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('修改密码'),
         centerTitle: true,
@@ -48,7 +50,7 @@ class ChangepasswordView extends GetView<ChangepasswordController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "hello1",
+                  // initialValue: "hello1",
                   decoration: InputDecoration(
                     hintText: '请输入用户名',
                     border: InputBorder.none,
@@ -87,7 +89,7 @@ class ChangepasswordView extends GetView<ChangepasswordController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "123456",
+                  // initialValue: "123456",
                   decoration: InputDecoration(
                     hintText: '请输入密码',
                     border: InputBorder.none,
@@ -126,7 +128,7 @@ class ChangepasswordView extends GetView<ChangepasswordController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "654321",
+                  // initialValue: "654321",
                   decoration: InputDecoration(
                     hintText: '请输入新的密码',
                     border: InputBorder.none,
@@ -165,7 +167,7 @@ class ChangepasswordView extends GetView<ChangepasswordController> {
                 color: Colors.white,
                 child: TextFormField(
                   // 表单文本框初始值
-                  initialValue: "654321",
+                  // initialValue: "654321",
                   decoration: InputDecoration(
                     hintText: '请输入确认密码',
                     border: InputBorder.none,

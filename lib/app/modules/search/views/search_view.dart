@@ -14,6 +14,8 @@ class SearchView extends GetView<SearchController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // 防止键盘覆盖内容
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: GetBuilder<SearchController>(
           init: SearchController(),
