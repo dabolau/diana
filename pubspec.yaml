@@ -13,6 +13,8 @@ dependencies:
   chewie: ^1.3.5
   # 保持屏幕不息屏
   wakelock: ^0.6.2
+  # 全局设置点击空白区域隐藏键盘
+  flutter_keyboard_visibility: ^5.4.0
   flutter: 
     sdk: flutter
   # 多国语言，解决输入框中语言切换问题

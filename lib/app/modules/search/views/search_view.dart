@@ -300,14 +300,6 @@ class SearchView extends GetView<SearchController> {
                                       // print(videosJsonString?['Datas'][index]);
                                       Get.toNamed(
                                         '/play',
-                                        // arguments: {
-                                        //   "id": controller
-                                        //       .videos?.datas?[index].id,
-                                        //   "name": controller
-                                        //       .videos?.datas?[index].name,
-                                        //   "urls": controller
-                                        //       .videos?.datas?[index].urls,
-                                        // },
                                         arguments: videosJsonString?['Datas']
                                             [index],
                                       );
