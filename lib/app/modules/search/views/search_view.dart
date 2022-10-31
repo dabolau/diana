@@ -1,3 +1,4 @@
+import 'package:diana/app/common/themes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -59,6 +60,9 @@ class SearchView extends GetView<SearchController> {
                         style: TextStyle(
                           // fontSize: 14,
                           textBaseline: TextBaseline.alphabetic, // 控制输入框文本垂直居中
+                          color: Get.isDarkMode
+                              ? darkTextPrimaryColor
+                              : lightTextPrimaryColor,
                         ),
                         onChanged: (value) {
                           text = value;
