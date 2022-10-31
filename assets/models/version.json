@@ -1,13 +1,11 @@
 {
-    "Datas": [
-        {
-            "ID": "6342e2a05e878ee757557bb6",
-            "Name": "版本更新1.0.0",
-            "Version": "1.0.0",
-            "Description": "更新到第一个版本，优化程序功能",
-            "URL": "http://www.baidu.com"
-        }
-    ],
+    "Data": {
+        "ID": "6342e2a05e878ee757557bb6",
+        "Name": "版本更新1.0.0",
+        "Version": "1.0.0",
+        "Description": "更新到第一个版本，优化程序功能",
+        "URL": "http://www.baidu.com"
+    },
     "Message": "查询成功",
     "StatusCode": 200
 }

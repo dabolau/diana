@@ -14,17 +14,6 @@ class FeedbackProvider extends GetConnect {
     httpClient.baseUrl = 'YOUR-API-URL';
   }
 
-  /// 获取反馈信息
-  Future<Feedback?> getFeedback(String id) async {
-    /// 发送请求
-    final response = await get(
-        'http://${dianaServerAddress}/feedback/detail/?id=633d7878519e180f23751a28');
-
-    /// 网络数据转换为模型
-    Feedback feedback = Feedback.fromJson(response.body);
-    return feedback;
-  }
-
   /// 添加反馈信息
   Future<Feedback?> postFeedback(Map<String, dynamic> feedbackBody) async {
     /// 发送请求

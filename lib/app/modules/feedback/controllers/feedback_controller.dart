@@ -14,18 +14,6 @@ class FeedbackController extends GetxController {
   /// 反馈邮箱
   var email = ''.obs;
 
-  /// 获取反馈信息
-  void getFeedback() async {
-    /// 发送请求
-    var feedback =
-        await FeedbackProvider().getFeedback('633d7878519e180f23751a28');
-    print('*1');
-    print(feedback?.data?.name);
-    print(feedback?.data?.description);
-    print(feedback?.data?.email);
-    print('*1');
-  }
-
   /// 添加反馈信息
   void postFeedback() async {
     /// 获取当前时间
