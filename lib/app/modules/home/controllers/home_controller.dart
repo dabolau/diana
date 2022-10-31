@@ -1,8 +1,12 @@
 import 'package:diana/app/modules/home/providers/videos_provider.dart';
 import 'package:diana/app/modules/home/videos_model.dart';
 import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class HomeController extends GetxController {
+  /// 上拉加载下拉刷新控制器
+  var refreshController = RefreshController(initialRefresh: false);
+
   /// 获取内容
   var text = ''.obs; // 名称
   var category = ''.obs; // 类别
@@ -10,6 +14,10 @@ class HomeController extends GetxController {
   var area = ''.obs; // 地区
   var language = ''.obs; // 语言
   var year = ''.obs; // 年份
+
+  /// 分页内容
+  var size = 9.obs; // 分页大小
+  var page = 1.obs; // 分页页码
 
   /// 视频模型
   Videos? movieVideos;
@@ -35,6 +43,8 @@ class HomeController extends GetxController {
       area: area.value,
       language: language.value,
       year: year.value,
+      size: size.value.toString(),
+      page: page.value.toString(),
     );
 
     /// 判断数据为空时
@@ -72,6 +82,8 @@ class HomeController extends GetxController {
       area: area.value,
       language: language.value,
       year: year.value,
+      size: size.value.toString(),
+      page: page.value.toString(),
     );
 
     /// 判断数据为空时
@@ -109,6 +121,8 @@ class HomeController extends GetxController {
       area: area.value,
       language: language.value,
       year: year.value,
+      size: size.value.toString(),
+      page: page.value.toString(),
     );
 
     /// 判断数据为空时
@@ -146,6 +160,8 @@ class HomeController extends GetxController {
       area: area.value,
       language: language.value,
       year: year.value,
+      size: size.value.toString(),
+      page: page.value.toString(),
     );
 
     /// 判断数据为空时
@@ -163,6 +179,55 @@ class HomeController extends GetxController {
 
     /// 更新界面
     update();
+  }
+
+  /// 下拉刷新
+  void onRefresh() async {
+    /// 监视网络数据
+    await Future.delayed(Duration(milliseconds: 1000));
+
+    /// 刷新数据
+    /// 获取电影
+    getMovieVideos();
+
+    /// 获取电视剧
+    getTvVideos();
+
+    /// 获取动漫
+    getAnimeVideos();
+
+    /// 获取综艺
+    getVarietyVideos();
+
+    refreshController.refreshCompleted();
+
+    // /// 更新界面
+    // update();
+  }
+
+  /// 上拉加载
+  void onLoading() async {
+    /// 监视网络数据
+    await Future.delayed(Duration(milliseconds: 1000));
+
+    /// 加载数据
+    /// 获取电影
+    getMovieVideos();
+
+    /// 获取电视剧
+    getTvVideos();
+
+    /// 获取动漫
+    getAnimeVideos();
+
+    /// 获取综艺
+    getVarietyVideos();
+
+    /// 加载成功
+    refreshController.loadComplete();
+
+    // /// 更新界面
+    // update();
   }
 
   @override

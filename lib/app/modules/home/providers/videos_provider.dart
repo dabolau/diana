@@ -14,7 +14,7 @@ class VideosProvider extends GetConnect {
   }
 
   //////
-  /// 获取电影信息
+  /// 获取视频信息
   //////
   Future<Videos?> getVideos({
     String text = '',
@@ -23,10 +23,12 @@ class VideosProvider extends GetConnect {
     String area = '',
     String language = '',
     String year = '',
+    String size = '3',
+    String page = '1',
   }) async {
     // 发送请求
     final response = await get(
-        'http://${dianaServerAddress}/video/?text=${text}&category=${category}&type=${type}&area=${area}&language=${language}&year=${year}&size=9&page=1');
+        'http://${dianaServerAddress}/video/?text=${text}&category=${category}&type=${type}&area=${area}&language=${language}&year=${year}&size=${size}&page=${page}');
     print(response.body);
     // 网络数据转换为模型
     Videos videos = Videos.fromJson(response.body);

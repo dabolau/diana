@@ -2,6 +2,7 @@ import 'package:diana/app/common/themes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../controllers/search_controller.dart';
 
@@ -140,6 +141,7 @@ class SearchView extends GetView<SearchController> {
                           controller.text.value = text;
 
                           /// 提交数据到服务器
+                          controller.size.value = 9;
                           controller.search();
 
                           /// 更新界面
@@ -206,150 +208,177 @@ class SearchView extends GetView<SearchController> {
           } else {
             /// 当有数据时
             return Container(
-              child: ListView.builder(
-                itemCount: controller.videos?.datas?.length,
-                itemBuilder: ((context, index) {
-                  // return Text('${controller.videos?.datas?[index].name}');
-                  return Container(
-                    margin: EdgeInsets.only(
-                        left: 10, top: 10, right: 10, bottom: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        /// 左边
-                        Container(
-                          width:
-                              (MediaQuery.of(context).size.width / 16 * 9) / 2,
-                          height:
-                              (MediaQuery.of(context).size.width / 16 * 16) / 2,
-                          decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(8),
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                  '${controller.videos?.datas?[index].picture}'),
-                              fit: BoxFit.cover,
+              /// 上拉加载下拉刷新
+              child: SmartRefresher(
+                enablePullUp: true, // 激活上拉
+                enablePullDown: true, // 激活下拉
+                controller: controller.refreshController, // 控制器
+                onRefresh: controller.onRefresh, // 上拉刷新
+                onLoading: controller.onLoading, // 下拉加载
+                header: ClassicHeader(
+                  // 上拉刷新显示样式
+                  idleText: '下拉加载',
+                  releaseText: '松开刷新',
+                  refreshingText: '玩命刷新中',
+                  completeText: '刷新成功',
+                  failedText: '刷新失败',
+                ),
+                footer: ClassicFooter(
+                  // 下拉加载显示样式
+                  idleText: '上拉加载',
+                  canLoadingText: '松开，加载更多',
+                  loadingText: '玩命加载中',
+                  noDataText: '没有更多数据了',
+                  failedText: '加载失败',
+                ),
+                child: ListView.builder(
+                  itemCount: controller.videos?.datas?.length,
+                  itemBuilder: ((context, index) {
+                    // return Text('${controller.videos?.datas?[index].name}');
+                    return Container(
+                      margin: EdgeInsets.only(
+                          left: 10, top: 10, right: 10, bottom: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          /// 左边
+                          Container(
+                            width:
+                                (MediaQuery.of(context).size.width / 16 * 9) /
+                                    2,
+                            height:
+                                (MediaQuery.of(context).size.width / 16 * 16) /
+                                    2,
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(8),
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                    '${controller.videos?.datas?[index].picture}'),
+                                fit: BoxFit.cover,
+                              ),
                             ),
+                            // child: Center(child: Image.network('${controller.videos?.datas?[index].picture}')),
                           ),
-                          // child: Center(child: Image.network('${controller.videos?.datas?[index].picture}')),
-                        ),
 
-                        //////
-                        /// 间隔
-                        //////
-                        SizedBox(
-                          width: 10,
-                        ),
+                          //////
+                          /// 间隔
+                          //////
+                          SizedBox(
+                            width: 10,
+                          ),
 
-                        /// 右边
-                        Expanded(
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                /// 视频名称
-                                Text(
-                                  '${controller.videos?.datas?[index].name}',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(fontWeight: FontWeight.w800),
-                                ),
+                          /// 右边
+                          Expanded(
+                            child: Container(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  /// 视频名称
+                                  Text(
+                                    '${controller.videos?.datas?[index].name}',
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w800),
+                                  ),
 
-                                //////
-                                /// 间隔
-                                //////
-                                SizedBox(
-                                  height: 10,
-                                ),
+                                  //////
+                                  /// 间隔
+                                  //////
+                                  SizedBox(
+                                    height: 10,
+                                  ),
 
-                                /// 视频状态
-                                Text(
-                                  '${controller.videos?.datas?[index].status}',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                                  /// 视频状态
+                                  Text(
+                                    '${controller.videos?.datas?[index].status}',
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
 
-                                //////
-                                /// 间隔
-                                //////
-                                SizedBox(
-                                  height: 10,
-                                ),
+                                  //////
+                                  /// 间隔
+                                  //////
+                                  SizedBox(
+                                    height: 10,
+                                  ),
 
-                                /// 视频介绍
-                                Text(
-                                  '${controller.videos?.datas?[index].description}',
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                                  /// 视频介绍
+                                  Text(
+                                    '${controller.videos?.datas?[index].description}',
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
 
-                                //////
-                                /// 间隔
-                                //////
-                                SizedBox(
-                                  height: 10,
-                                ),
+                                  //////
+                                  /// 间隔
+                                  //////
+                                  SizedBox(
+                                    height: 10,
+                                  ),
 
-                                /// 播放按钮
-                                Container(
-                                  width: 70,
-                                  height: 34,
-                                  child: TextButton(
-                                    onPressed: () {
-                                      /// 数据模型转换为JSON
-                                      var videosJsonString =
-                                          controller.videos?.toJson();
-                                      // print(videosJsonString?['Datas'][index]);
-                                      Get.toNamed(
-                                        '/play',
-                                        arguments: videosJsonString?['Datas']
-                                            [index],
-                                      );
-                                    },
-                                    child: Text(
-                                      '播放',
-                                      // style: TextStyle(fontSize: 14,),
-                                    ),
-                                    style: ButtonStyle(
-                                      // 清除内边距
-                                      minimumSize:
-                                          MaterialStateProperty.all(Size.zero),
-                                      padding: MaterialStateProperty.all(
-                                          EdgeInsets.zero),
-                                      // 形状
-                                      shape: MaterialStateProperty.all(
-                                        RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(25),
+                                  /// 播放按钮
+                                  Container(
+                                    width: 70,
+                                    height: 34,
+                                    child: TextButton(
+                                      onPressed: () {
+                                        /// 数据模型转换为JSON
+                                        var videosJsonString =
+                                            controller.videos?.toJson();
+                                        // print(videosJsonString?['Datas'][index]);
+                                        Get.toNamed(
+                                          '/play',
+                                          arguments: videosJsonString?['Datas']
+                                              [index],
+                                        );
+                                      },
+                                      child: Text(
+                                        '播放',
+                                        // style: TextStyle(fontSize: 14,),
+                                      ),
+                                      style: ButtonStyle(
+                                        // 清除内边距
+                                        minimumSize: MaterialStateProperty.all(
+                                            Size.zero),
+                                        padding: MaterialStateProperty.all(
+                                            EdgeInsets.zero),
+                                        // 形状
+                                        shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                          ),
                                         ),
-                                      ),
-                                      // 前景颜色
-                                      foregroundColor:
-                                          MaterialStateProperty.all(
-                                        Color(0xFF000000),
-                                      ),
-                                      // 背景颜色
-                                      backgroundColor:
-                                          MaterialStateProperty.all(
-                                        Color(0xFFFFEB3B),
-                                      ),
-                                      // 覆盖颜色
-                                      overlayColor: MaterialStateProperty.all(
-                                        Color(0xFFFFEB3B),
+                                        // 前景颜色
+                                        foregroundColor:
+                                            MaterialStateProperty.all(
+                                          Color(0xFF000000),
+                                        ),
+                                        // 背景颜色
+                                        backgroundColor:
+                                            MaterialStateProperty.all(
+                                          Color(0xFFFFEB3B),
+                                        ),
+                                        // 覆盖颜色
+                                        overlayColor: MaterialStateProperty.all(
+                                          Color(0xFFFFEB3B),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  );
-                }),
+                        ],
+                      ),
+                    );
+                  }),
+                ),
               ),
             );
           }
