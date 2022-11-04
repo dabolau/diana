@@ -40,8 +40,8 @@ class SearchController extends GetxController {
         area: area.value,
         language: language.value,
         year: year.value,
-        size: (size.value).toString(),
-        page: (page.value).toString());
+        size: size.value.toString(),
+        page: page.value.toString());
 
     /// 判断数据为空直接返回
     if (videos?.datas == null) {

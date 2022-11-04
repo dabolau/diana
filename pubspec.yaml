@@ -17,6 +17,8 @@ dependencies:
   flutter_keyboard_visibility: ^5.4.0
   # 上拉加载下拉刷新
   pull_to_refresh: ^2.0.0
+  # 打开外部浏览器，拨打电话，发送短信，打开应用程序
+  url_launcher: ^6.1.6
   flutter: 
     sdk: flutter
   # 多国语言，解决输入框中语言切换问题

@@ -1,3 +1,4 @@
+import 'package:diana/app/common/themes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -43,8 +44,9 @@ class MainView extends GetView<MainController> {
             return BottomNavigationBar(
               elevation: 0,
               type: BottomNavigationBarType.fixed,
-              selectedItemColor: Colors.yellow,
               unselectedItemColor: Colors.grey,
+              selectedItemColor:
+                  Get.isDarkMode ? lightPrimaryColor : lightPrimaryColor,
               selectedFontSize: 12,
               unselectedFontSize: 12,
               currentIndex: controller.pageIndex.value,
@@ -79,7 +81,8 @@ class MainView extends GetView<MainController> {
                   ),
                   activeIcon: Icon(
                     Icons.home_rounded,
-                    color: Colors.yellow,
+                    color:
+                        Get.isDarkMode ? lightPrimaryColor : lightPrimaryColor,
                     size: 33,
                   ),
                   label: 'bottombars_home'.tr,
@@ -93,7 +96,8 @@ class MainView extends GetView<MainController> {
                   ),
                   activeIcon: Icon(
                     Icons.search_rounded,
-                    color: Colors.yellow,
+                    color:
+                        Get.isDarkMode ? lightPrimaryColor : lightPrimaryColor,
                     size: 33,
                   ),
                   label: 'bottombars_search'.tr,
@@ -107,7 +111,8 @@ class MainView extends GetView<MainController> {
                   ),
                   activeIcon: Icon(
                     Icons.person_rounded,
-                    color: Colors.yellow,
+                    color:
+                        Get.isDarkMode ? lightPrimaryColor : lightPrimaryColor,
                     size: 33,
                   ),
                   label: 'bottombars_my'.tr,
