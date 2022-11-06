@@ -23,10 +23,12 @@ class LocaleKeys {
   static const appbars_feedback = 'appbars_feedback';
   static const bottombars_home = 'bottombars_home';
   static const bottombars_search = 'bottombars_search';
+  static const bottombars_type = 'bottombars_type';
   static const bottombars_my = 'bottombars_my';
   static const themes_light = 'themes_light';
   static const themes_dark = 'themes_dark';
   static const buttons_search = 'buttons_search';
+  static const buttons_type = 'buttons_type';
   static const buttons_account = 'buttons_account';
   static const buttons_register = 'buttons_register';
   static const buttons_login = 'buttons_login';
@@ -57,10 +59,12 @@ class Locales {
     'appbars_feedback': '意见反馈',
     'bottombars_home': '首页',
     'bottombars_search': '搜索',
+    'bottombars_type': '分类',
     'bottombars_my': '我的',
     'themes_light': '浅色模式',
     'themes_dark': '深色模式',
     'buttons_search': '搜索',
+    'buttons_type': '分类',
     'buttons_account': '账号信息',
     'buttons_register': '注册',
     'buttons_login': '登录',
@@ -89,10 +93,12 @@ class Locales {
     'appbars_feedback': 'Feedback',
     'bottombars_home': 'Home',
     'bottombars_search': 'Search',
+    'bottombars_type': 'Type',
     'bottombars_my': 'My',
     'themes_light': 'Light',
     'themes_dark': 'Dark',
     'buttons_search': 'Search',
+    'buttons_type': 'Type',
     'buttons_account': 'Account',
     'buttons_register': 'Register',
     'buttons_login': 'Login',

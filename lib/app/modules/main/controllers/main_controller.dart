@@ -1,6 +1,6 @@
 import 'package:diana/app/modules/home/views/home_view.dart';
 import 'package:diana/app/modules/my/views/my_view.dart';
-import 'package:diana/app/modules/search/views/search_view.dart';
+import 'package:diana/app/modules/type/views/type_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +14,7 @@ class MainController extends GetxController {
   /// 所有页面
   var pages = [
     HomeView(),
-    SearchView(),
+    TypeView(),
     MyView(),
   ];
 

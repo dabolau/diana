@@ -14,6 +14,7 @@
     "bottombars": {
         "home": "Home",
         "search": "Search",
+        "type": "Type",
         "my": "My"
     },
     "themes": {
@@ -22,6 +23,7 @@
     },
     "buttons": {
         "search": "Search",
+        "type": "Type",
         "account": "Account",
         "register": "Register",
         "login": "Login",

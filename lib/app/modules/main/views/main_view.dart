@@ -90,17 +90,17 @@ class MainView extends GetView<MainController> {
                 // 搜索选项
                 BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.search_outlined,
+                    Icons.live_tv_outlined,
                     color: Colors.grey,
                     size: 33,
                   ),
                   activeIcon: Icon(
-                    Icons.search_rounded,
+                    Icons.live_tv_rounded,
                     color:
                         Get.isDarkMode ? lightPrimaryColor : lightPrimaryColor,
                     size: 33,
                   ),
-                  label: 'bottombars_search'.tr,
+                  label: 'bottombars_type'.tr,
                 ),
                 // 我的选项
                 BottomNavigationBarItem(

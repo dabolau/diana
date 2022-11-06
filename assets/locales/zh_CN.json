@@ -14,6 +14,7 @@
     "bottombars": {
         "home": "首页",
         "search": "搜索",
+        "type": "分类",
         "my": "我的"
     },
     "themes": {
@@ -22,6 +23,7 @@
     },
     "buttons": {
         "search": "搜索",
+        "type": "分类",
         "account": "账号信息",
         "register": "注册",
         "login": "登录",
