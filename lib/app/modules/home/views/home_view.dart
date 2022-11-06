@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -10,7 +9,37 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('appbars_home'.tr),
+        title: GetBuilder<HomeController>(
+          init: HomeController(),
+          builder: (controller) {
+            return GestureDetector(
+              onTap: () {
+                Get.toNamed('/search');
+              },
+              child: Container(
+                padding: EdgeInsets.only(
+                  left: 0,
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                ),
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Color(0xFFF4F4F4),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Center(
+                  child: Text(
+                    'texts_search'.tr,
+                    style: TextStyle(
+                      color: Get.isDarkMode ? Colors.grey : Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
         centerTitle: true,
         elevation: 0,
       ),

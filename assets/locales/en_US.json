@@ -35,5 +35,8 @@
         "version": "Version",
         "feedback": "Feedback",
         "submit": "Submit"
+    },
+    "texts": {
+        "search": "Search for what you want"
     }
 }

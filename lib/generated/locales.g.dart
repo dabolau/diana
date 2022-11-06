@@ -40,6 +40,7 @@ class LocaleKeys {
   static const buttons_version = 'buttons_version';
   static const buttons_feedback = 'buttons_feedback';
   static const buttons_submit = 'buttons_submit';
+  static const texts_search = 'texts_search';
 }
 
 class Locales {
@@ -73,6 +74,7 @@ class Locales {
     'buttons_version': '版本更新',
     'buttons_feedback': '意见反馈',
     'buttons_submit': '提交',
+    'texts_search': '搜索您要的内容',
   };
   static const en_US = {
     'appbars_home': 'Home',
@@ -104,5 +106,6 @@ class Locales {
     'buttons_version': 'Version',
     'buttons_feedback': 'Feedback',
     'buttons_submit': 'Submit',
+    'texts_search': 'Search for what you want',
   };
 }
