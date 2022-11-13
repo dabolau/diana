@@ -6,14 +6,14 @@ const lightPrimaryColor = Color(0xFFFFEB3B);
 /// 浅色主要文字颜色
 const lightTextPrimaryColor = Color(0xFF000000);
 
+/// 浅色背景颜色
+var lightBackgroundColor = Color(0xFFF4F4F4);
+
 /// 深色主要颜色
 const darkPrimaryColor = Color(0xFF1C1B20);
 
 /// 深色主要文字颜色
 const darkTextPrimaryColor = Color(0xFF000000);
-
-/// 浅色背景颜色
-var lightBackgroundColor = Color(0xFFF4F4F4);
 
 /// 深色背景颜色
 var darkBackgroundColor = Color(0xFF000000);

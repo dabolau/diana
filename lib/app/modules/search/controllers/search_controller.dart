@@ -4,9 +4,6 @@ import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class SearchController extends GetxController {
-  /// 上拉加载下拉刷新控制器
-  var refreshController = RefreshController(initialRefresh: false);
-
   /// 获取内容
   var text = ''.obs; // 名称
   var category = ''.obs; // 类别
@@ -19,16 +16,13 @@ class SearchController extends GetxController {
   var size = 9.obs; // 分页大小
   var page = 1.obs; // 分页页码
 
-  /// 加载次数
-  var loadCount = 1.obs;
-
   /// 视频模型
   Videos? videos;
 
   //////
   /// 搜索内容
   //////
-  void search() async {
+  void getSearchVideos() async {
     /// 搜索内容
     print('搜索内容 ${text.value}');
 
@@ -60,6 +54,12 @@ class SearchController extends GetxController {
     update();
   }
 
+  /// 上拉加载下拉刷新控制器
+  var refreshController = RefreshController(initialRefresh: false);
+
+  /// 加载次数
+  var loadCount = 1.obs;
+
   /// 下拉刷新
   void onRefresh() async {
     /// 监视网络数据
@@ -70,12 +70,9 @@ class SearchController extends GetxController {
     size.value = 9;
     page.value = 1;
     print('获取内容为 ${text.value} 的 ${size.value} 条数据，第 ${page.value} 页');
-    search();
+    getSearchVideos();
 
     refreshController.refreshCompleted();
-
-    // /// 更新界面
-    // update();
   }
 
   /// 上拉加载
@@ -88,13 +85,10 @@ class SearchController extends GetxController {
     size.value = 9 * loadCount.value;
     page.value = 1;
     print('获取内容为 ${text.value} 的 ${size.value} 条数据，第 ${page.value} 页');
-    search();
+    getSearchVideos();
 
     /// 加载成功
     refreshController.loadComplete();
-
-    // /// 更新界面
-    // update();
   }
 
   @override

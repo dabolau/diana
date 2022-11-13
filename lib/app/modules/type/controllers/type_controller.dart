@@ -196,12 +196,19 @@ class TypeController extends GetxController {
   /// 上拉加载下拉刷新控制器
   var refreshController = RefreshController(initialRefresh: false);
 
+  /// 加载次数
+  var loadCount = 1.obs;
+
   /// 下拉刷新
   void onRefresh() async {
     /// 监视网络数据
     await Future.delayed(Duration(milliseconds: 1000));
 
-    /// 加载内容
+    /// 刷新数据
+    loadCount.value = 1;
+    size.value = 9;
+    page.value = 1;
+    print('获取内容为 ${text.value} 的 ${size.value} 条数据，第 ${page.value} 页');
     getTypeVideos();
 
     /// 刷新成功
@@ -213,7 +220,11 @@ class TypeController extends GetxController {
     /// 监视网络数据
     await Future.delayed(Duration(milliseconds: 1000));
 
-    /// 加载内容
+    /// 加载数据
+    loadCount.value++;
+    size.value = 9 * loadCount.value;
+    page.value = 1;
+    print('获取内容为 ${text.value} 的 ${size.value} 条数据，第 ${page.value} 页');
     getTypeVideos();
 
     /// 加载成功

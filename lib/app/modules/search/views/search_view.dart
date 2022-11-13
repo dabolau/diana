@@ -136,16 +136,10 @@ class SearchView extends GetView<SearchController> {
                           print('输入框为空');
                         } else {
                           print('提交');
-
-                          /// 获取表单中的值并赋给控制器
+                          // 获取表单中的值并赋给控制器
                           controller.text.value = text;
-
-                          /// 提交数据到服务器
-                          controller.size.value = 9;
-                          controller.search();
-
-                          /// 更新界面
-                          controller.update();
+                          // 获取数据
+                          controller.getSearchVideos();
                         }
                       },
                       child: Text(

@@ -1,6 +1,8 @@
 import 'package:diana/app/common/constant.dart';
+import 'package:diana/app/common/themes.dart';
 import 'package:diana/app/common/url.dart';
 import 'package:diana/app/modules/my/providers/versions_provider.dart';
+import 'package:diana/app/modules/type/controllers/type_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -11,6 +13,22 @@ class MyController extends GetxController {
 
   /// 主题名称
   var themeName = '浅色模式'.obs;
+
+  /// 分类界面控制器
+  var typeController = TypeController();
+
+  /// 更换主题
+  void changeTheme() {
+    /// 更换主题名称
+    themeName.value = Get.isDarkMode ? 'themes_light'.tr : 'themes_dark'.tr;
+
+    /// 更换主题
+    Get.changeTheme(Get.isDarkMode ? Themes.light : Themes.dark);
+
+    /// 更新界面
+    typeController.update();
+    update();
+  }
 
   /// 获取内容
   var text = ''.obs; // 名称

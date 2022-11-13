@@ -20,6 +20,7 @@ class LocaleKeys {
   static const appbars_changepassword = 'appbars_changepassword';
   static const appbars_getpassword = 'appbars_getpassword';
   static const appbars_logout = 'appbars_logout';
+  static const appbars_history = 'appbars_history';
   static const appbars_feedback = 'appbars_feedback';
   static const bottombars_home = 'bottombars_home';
   static const bottombars_search = 'bottombars_search';
@@ -35,7 +36,7 @@ class LocaleKeys {
   static const buttons_changepassword = 'buttons_changepassword';
   static const buttons_getpassword = 'buttons_getpassword';
   static const buttons_logout = 'buttons_logout';
-  static const buttons_privacy_security = 'buttons_privacy_security';
+  static const buttons_history = 'buttons_history';
   static const buttons_language = 'buttons_language';
   static const buttons_theme = 'buttons_theme';
   static const buttons_ad = 'buttons_ad';
@@ -43,6 +44,7 @@ class LocaleKeys {
   static const buttons_feedback = 'buttons_feedback';
   static const buttons_submit = 'buttons_submit';
   static const texts_search = 'texts_search';
+  static const texts_history = 'texts_history';
 }
 
 class Locales {
@@ -56,6 +58,7 @@ class Locales {
     'appbars_changepassword': '修改密码',
     'appbars_getpassword': '找回密码',
     'appbars_logout': '注销',
+    'appbars_history': '历史记录',
     'appbars_feedback': '意见反馈',
     'bottombars_home': '首页',
     'bottombars_search': '搜索',
@@ -71,7 +74,7 @@ class Locales {
     'buttons_changepassword': '修改密码',
     'buttons_getpassword': '找回密码',
     'buttons_logout': '注销',
-    'buttons_privacy_security': '隐私安全',
+    'buttons_history': '历史记录',
     'buttons_language': '多国语言',
     'buttons_theme': '主题样式',
     'buttons_ad': '封面广告',
@@ -79,6 +82,7 @@ class Locales {
     'buttons_feedback': '意见反馈',
     'buttons_submit': '提交',
     'texts_search': '搜索您要的内容',
+    'texts_history': '暂无记录',
   };
   static const en_US = {
     'appbars_home': 'Home',
@@ -90,6 +94,7 @@ class Locales {
     'appbars_changepassword': 'Change password',
     'appbars_getpassword': 'Get password',
     'appbars_logout': 'Logout',
+    'appbars_history': 'History',
     'appbars_feedback': 'Feedback',
     'bottombars_home': 'Home',
     'bottombars_search': 'Search',
@@ -105,13 +110,14 @@ class Locales {
     'buttons_changepassword': 'Change password',
     'buttons_getpassword': 'Get password',
     'buttons_logout': 'Logout',
-    'buttons_privacy_security': 'Privacy security',
+    'buttons_history': 'History',
     'buttons_language': 'Language',
     'buttons_theme': 'Theme',
     'buttons_ad': 'Ad',
     'buttons_version': 'Version',
     'buttons_feedback': 'Feedback',
     'buttons_submit': 'Submit',
-    'texts_search': 'Search for what you want',
+    'texts_search': 'Search',
+    'texts_history': 'None',
   };
 }

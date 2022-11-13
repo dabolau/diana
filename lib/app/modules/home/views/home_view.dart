@@ -89,12 +89,12 @@ class HomeView extends GetView<HomeController> {
                             children: [
                               Text('推荐电影'),
                               Spacer(),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.keyboard_arrow_right,
-                                ),
-                              ),
+                              // IconButton(
+                              //   onPressed: () {},
+                              //   icon: Icon(
+                              //     Icons.keyboard_arrow_right,
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
@@ -191,12 +191,12 @@ class HomeView extends GetView<HomeController> {
                             children: [
                               Text('推荐电视剧'),
                               Spacer(),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.keyboard_arrow_right,
-                                ),
-                              ),
+                              // IconButton(
+                              //   onPressed: () {},
+                              //   icon: Icon(
+                              //     Icons.keyboard_arrow_right,
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
@@ -293,12 +293,12 @@ class HomeView extends GetView<HomeController> {
                             children: [
                               Text('推荐动漫'),
                               Spacer(),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.keyboard_arrow_right,
-                                ),
-                              ),
+                              // IconButton(
+                              //   onPressed: () {},
+                              //   icon: Icon(
+                              //     Icons.keyboard_arrow_right,
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
@@ -395,12 +395,12 @@ class HomeView extends GetView<HomeController> {
                             children: [
                               Text('推荐综艺'),
                               Spacer(),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.keyboard_arrow_right,
-                                ),
-                              ),
+                              // IconButton(
+                              //   onPressed: () {},
+                              //   icon: Icon(
+                              //     Icons.keyboard_arrow_right,
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),

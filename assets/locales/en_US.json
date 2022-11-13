@@ -9,6 +9,7 @@
         "changepassword": "Change password",
         "getpassword": "Get password",
         "logout": "Logout",
+        "history": "History",
         "feedback": "Feedback"
     },
     "bottombars": {
@@ -30,7 +31,7 @@
         "changepassword": "Change password",
         "getpassword": "Get password",
         "logout": "Logout",
-        "privacy_security": "Privacy security",
+        "history": "History",
         "language": "Language",
         "theme": "Theme",
         "ad": "Ad",
@@ -39,6 +40,7 @@
         "submit": "Submit"
     },
     "texts": {
-        "search": "Search for what you want"
+        "search": "Search",
+        "history": "None"
     }
 }

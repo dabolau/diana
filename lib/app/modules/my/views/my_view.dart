@@ -89,9 +89,7 @@ class MyView extends GetView<MyController> {
               // color: Color(0xFFFFEB3B),
               child: TextButton(
                 onPressed: () {
-                  // Get.toNamed("/play");
-                  Get.toNamed("/search");
-
+                  Get.toNamed("/history");
                 },
                 child: Row(
                   // 主轴间隔显示
@@ -104,7 +102,7 @@ class MyView extends GetView<MyController> {
                       width: 5,
                     ),
                     Text(
-                      'buttons_privacy_security'.tr,
+                      'buttons_history'.tr,
                     ),
                     // 中间组件
                     Spacer(),
@@ -219,15 +217,8 @@ class MyView extends GetView<MyController> {
               // color: Color(0xFFFFEB3B),
               child: TextButton(
                 onPressed: () {
-                  /// 更换主题名称
-                  controller.themeName.value =
-                      Get.isDarkMode ? 'themes_light'.tr : 'themes_dark'.tr;
-
-                  /// 更换主题
-                  Get.changeTheme(Get.isDarkMode ? Themes.light : Themes.dark);
-
-                  /// 更新界面
-                  controller.update();
+                  // 更换主题
+                  controller.changeTheme();
                 },
                 child: Row(
                   // 主轴间隔显示

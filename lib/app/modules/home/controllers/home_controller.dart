@@ -1,14 +1,9 @@
 import 'package:diana/app/modules/home/providers/videos_provider.dart';
 import 'package:diana/app/modules/home/videos_model.dart';
-import 'package:diana/app/modules/main/controllers/main_controller.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class HomeController extends GetxController {
-  /// 上拉加载下拉刷新控制器
-  var refreshController = RefreshController(initialRefresh: false);
-
   /// 获取内容
   var text = ''.obs; // 名称
   var category = ''.obs; // 类别
@@ -183,12 +178,14 @@ class HomeController extends GetxController {
     update();
   }
 
+  /// 上拉加载下拉刷新控制器
+  var refreshController = RefreshController(initialRefresh: false);
+
   /// 下拉刷新
   void onRefresh() async {
     /// 监视网络数据
     await Future.delayed(Duration(milliseconds: 1000));
 
-    /// 刷新数据
     /// 获取电影
     getMovieVideos();
 
@@ -201,10 +198,8 @@ class HomeController extends GetxController {
     /// 获取综艺
     getVarietyVideos();
 
+    /// 刷新成功
     refreshController.refreshCompleted();
-
-    // /// 更新界面
-    // update();
   }
 
   /// 上拉加载
@@ -212,7 +207,6 @@ class HomeController extends GetxController {
     /// 监视网络数据
     await Future.delayed(Duration(milliseconds: 1000));
 
-    /// 加载数据
     /// 获取电影
     getMovieVideos();
 
@@ -227,9 +221,6 @@ class HomeController extends GetxController {
 
     /// 加载成功
     refreshController.loadComplete();
-
-    // /// 更新界面
-    // update();
   }
 
   @override

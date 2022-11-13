@@ -12,6 +12,8 @@ import '../modules/feedback/bindings/feedback_binding.dart';
 import '../modules/feedback/views/feedback_view.dart';
 import '../modules/getpassword/bindings/getpassword_binding.dart';
 import '../modules/getpassword/views/getpassword_view.dart';
+import '../modules/history/bindings/history_binding.dart';
+import '../modules/history/views/history_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -106,6 +108,11 @@ class AppPages {
       name: _Paths.ABOUT,
       page: () => AboutView(),
       binding: AboutBinding(),
+    ),
+    GetPage(
+      name: _Paths.HISTORY,
+      page: () => HistoryView(),
+      binding: HistoryBinding(),
     ),
   ];
 }

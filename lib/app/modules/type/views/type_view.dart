@@ -10,8 +10,43 @@ class TypeView extends GetView<TypeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   title: Text('分类'),
+      //   centerTitle: true,
+      //   elevation: 0,
+      // ),
       appBar: AppBar(
-        title: Text('分类'),
+        title: GetBuilder<TypeController>(
+          init: TypeController(),
+          builder: (controller) {
+            return GestureDetector(
+              onTap: () {
+                Get.toNamed('/search');
+              },
+              child: Container(
+                padding: EdgeInsets.only(
+                  left: 0,
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                ),
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Color(0xFFF4F4F4),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Center(
+                  child: Text(
+                    'texts_search'.tr,
+                    style: TextStyle(
+                      color: Get.isDarkMode ? Colors.grey : Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
         centerTitle: true,
         elevation: 0,
       ),
@@ -69,7 +104,13 @@ class TypeView extends GetView<TypeController> {
                             selectedColor: lightPrimaryColor,
                             backgroundColor: Colors.white,
                             label: Text(
-                                '${controller.filterCategory.value[index]}'),
+                              '${controller.filterCategory.value[index]}',
+                              style: TextStyle(
+                                color: Get.isDarkMode
+                                    ? lightTextPrimaryColor
+                                    : lightTextPrimaryColor,
+                              ),
+                            ),
                             selected:
                                 controller.filterCategoryIndex.value == index,
                             onSelected: (value) {
@@ -83,10 +124,8 @@ class TypeView extends GetView<TypeController> {
                                 controller.category.value =
                                     controller.filterCategory.value[index];
                               }
-                              // 获取内容
+                              // 获取数据
                               controller.getTypeVideos();
-                              // 更新界面
-                              controller.update();
                             },
                           ),
                         );
@@ -118,8 +157,14 @@ class TypeView extends GetView<TypeController> {
                             pressElevation: 0,
                             selectedColor: lightPrimaryColor,
                             backgroundColor: Colors.white,
-                            label:
-                                Text('${controller.filterType.value[index]}'),
+                            label: Text(
+                              '${controller.filterType.value[index]}',
+                              style: TextStyle(
+                                color: Get.isDarkMode
+                                    ? lightTextPrimaryColor
+                                    : lightTextPrimaryColor,
+                              ),
+                            ),
                             selected: controller.filterTypeIndex.value == index,
                             onSelected: (value) {
                               // 选中组件索引
@@ -131,10 +176,8 @@ class TypeView extends GetView<TypeController> {
                                 controller.type.value =
                                     controller.filterType.value[index];
                               }
-                              // 获取内容
+                              // 获取数据
                               controller.getTypeVideos();
-                              // 更新界面
-                              controller.update();
                             },
                           ),
                         );
@@ -166,8 +209,14 @@ class TypeView extends GetView<TypeController> {
                             pressElevation: 0,
                             selectedColor: lightPrimaryColor,
                             backgroundColor: Colors.white,
-                            label:
-                                Text('${controller.filterArea.value[index]}'),
+                            label: Text(
+                              '${controller.filterArea.value[index]}',
+                              style: TextStyle(
+                                color: Get.isDarkMode
+                                    ? lightTextPrimaryColor
+                                    : lightTextPrimaryColor,
+                              ),
+                            ),
                             selected: controller.filterAreaIndex.value == index,
                             onSelected: (value) {
                               // 选中组件索引
@@ -179,10 +228,8 @@ class TypeView extends GetView<TypeController> {
                                 controller.area.value =
                                     controller.filterArea.value[index];
                               }
-                              // 获取内容
+                              // 获取数据
                               controller.getTypeVideos();
-                              // 更新界面
-                              controller.update();
                             },
                           ),
                         );
@@ -215,7 +262,13 @@ class TypeView extends GetView<TypeController> {
                             selectedColor: lightPrimaryColor,
                             backgroundColor: Colors.white,
                             label: Text(
-                                '${controller.filterLanguage.value[index]}'),
+                              '${controller.filterLanguage.value[index]}',
+                              style: TextStyle(
+                                color: Get.isDarkMode
+                                    ? lightTextPrimaryColor
+                                    : lightTextPrimaryColor,
+                              ),
+                            ),
                             selected:
                                 controller.filterLanguageIndex.value == index,
                             onSelected: (value) {
@@ -229,10 +282,8 @@ class TypeView extends GetView<TypeController> {
                                 controller.language.value =
                                     controller.filterLanguage.value[index];
                               }
-                              // 获取内容
+                              // 获取数据
                               controller.getTypeVideos();
-                              // 更新界面
-                              controller.update();
                             },
                           ),
                         );
@@ -264,8 +315,14 @@ class TypeView extends GetView<TypeController> {
                             pressElevation: 0,
                             selectedColor: lightPrimaryColor,
                             backgroundColor: Colors.white,
-                            label:
-                                Text('${controller.filterYear.value[index]}'),
+                            label: Text(
+                              '${controller.filterYear.value[index]}',
+                              style: TextStyle(
+                                color: Get.isDarkMode
+                                    ? lightTextPrimaryColor
+                                    : lightTextPrimaryColor,
+                              ),
+                            ),
                             selected: controller.filterYearIndex.value == index,
                             onSelected: (value) {
                               // 选中组件索引
@@ -277,10 +334,8 @@ class TypeView extends GetView<TypeController> {
                                 controller.year.value =
                                     controller.filterYear.value[index];
                               }
-                              // 获取内容
+                              // 获取数据
                               controller.getTypeVideos();
-                              // 更新界面
-                              controller.update();
                             },
                           ),
                         );
