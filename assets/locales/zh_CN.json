@@ -10,7 +10,8 @@
         "getpassword": "找回密码",
         "logout": "注销",
         "history": "历史记录",
-        "feedback": "意见反馈"
+        "feedback": "意见反馈",
+        "about": "关于我们"
     },
     "bottombars": {
         "home": "首页",
@@ -37,6 +38,7 @@
         "ad": "封面广告",
         "version": "版本更新",
         "feedback": "意见反馈",
+        "about": "关于我们",
         "submit": "提交"
     },
     "texts": {

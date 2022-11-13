@@ -10,7 +10,8 @@
         "getpassword": "Get password",
         "logout": "Logout",
         "history": "History",
-        "feedback": "Feedback"
+        "feedback": "Feedback",
+        "about": "About"
     },
     "bottombars": {
         "home": "Home",
@@ -37,6 +38,7 @@
         "ad": "Ad",
         "version": "Version",
         "feedback": "Feedback",
+        "about": "About",
         "submit": "Submit"
     },
     "texts": {

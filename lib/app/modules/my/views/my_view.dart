@@ -1,3 +1,4 @@
+import 'package:diana/app/common/all_row_button.dart';
 import 'package:diana/app/common/themes.dart';
 import 'package:flutter/material.dart';
 
@@ -356,6 +357,7 @@ class MyView extends GetView<MyController> {
                 ),
               ),
             ),
+
             //////
             // 间隔
             //////
@@ -399,6 +401,31 @@ class MyView extends GetView<MyController> {
                     ),
                   ],
                 ),
+              ),
+            ),
+
+            //////
+            // 间隔
+            //////
+            SizedBox(
+              height: 1,
+            ),
+            //////
+            // 关于我们
+            //////
+            AllRowButton(
+              onPressed: () {
+                Get.toNamed('/about');
+              },
+              leftChild: Container(
+                margin: EdgeInsets.only(left: 5),
+                child: Text(
+                  'buttons_about'.tr,
+                ),
+              ),
+              rightChild: Icon(
+                Icons.keyboard_arrow_right,
+                size: 20,
               ),
             ),
 

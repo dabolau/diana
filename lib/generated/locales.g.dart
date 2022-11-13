@@ -22,6 +22,7 @@ class LocaleKeys {
   static const appbars_logout = 'appbars_logout';
   static const appbars_history = 'appbars_history';
   static const appbars_feedback = 'appbars_feedback';
+  static const appbars_about = 'appbars_about';
   static const bottombars_home = 'bottombars_home';
   static const bottombars_search = 'bottombars_search';
   static const bottombars_type = 'bottombars_type';
@@ -42,6 +43,7 @@ class LocaleKeys {
   static const buttons_ad = 'buttons_ad';
   static const buttons_version = 'buttons_version';
   static const buttons_feedback = 'buttons_feedback';
+  static const buttons_about = 'buttons_about';
   static const buttons_submit = 'buttons_submit';
   static const texts_search = 'texts_search';
   static const texts_history = 'texts_history';
@@ -60,6 +62,7 @@ class Locales {
     'appbars_logout': '注销',
     'appbars_history': '历史记录',
     'appbars_feedback': '意见反馈',
+    'appbars_about': '关于我们',
     'bottombars_home': '首页',
     'bottombars_search': '搜索',
     'bottombars_type': '分类',
@@ -80,6 +83,7 @@ class Locales {
     'buttons_ad': '封面广告',
     'buttons_version': '版本更新',
     'buttons_feedback': '意见反馈',
+    'buttons_about': '关于我们',
     'buttons_submit': '提交',
     'texts_search': '搜索您要的内容',
     'texts_history': '暂无记录',
@@ -96,6 +100,7 @@ class Locales {
     'appbars_logout': 'Logout',
     'appbars_history': 'History',
     'appbars_feedback': 'Feedback',
+    'appbars_about': 'About',
     'bottombars_home': 'Home',
     'bottombars_search': 'Search',
     'bottombars_type': 'Type',
@@ -116,6 +121,7 @@ class Locales {
     'buttons_ad': 'Ad',
     'buttons_version': 'Version',
     'buttons_feedback': 'Feedback',
+    'buttons_about': 'About',
     'buttons_submit': 'Submit',
     'texts_search': 'Search',
     'texts_history': 'None',
